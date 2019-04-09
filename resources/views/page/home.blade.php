@@ -1,5 +1,16 @@
 @extends('page.layouts.app')
-
+@section('style')
+    <style>
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: .50rem 1.25rem;
+            margin-bottom: -1px;
+            background-color: #fff;
+            border: unset;
+        }
+    </style>
+@endsection
 @section('content')
     <!--Carousel Wrapper-->
     <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel" >
@@ -69,7 +80,23 @@
             <a href="" class="btn btn-danger">MÁS SERVICIOS</a>
         </div>
         <div class="col-md-6">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur maxime officia similique sit vel vitae? Consectetur culpa cum facere modi nisi quae quas, veritatis. Eligendi modi placeat quas repellendus voluptate.</p>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <div class="md-v-line"></div><i class="fas fa-laptop mr-4 pr-3"></i> Cras justo odio
+                </li>
+                <li class="list-group-item">
+                    <div class="md-v-line"></div><i class="fas fa-bomb mr-5"></i>Dapibus ac facilisis in
+                </li>
+                <li class="list-group-item">
+                    <div class="md-v-line"></div><i class="fas fa-code mr-5"></i>Morbi leo risus
+                </li>
+                <li class="list-group-item">
+                    <div class="md-v-line"></div><i class="far fa-gem mr-5"></i>Porta ac consectetur ac
+                </li>
+                <li class="list-group-item">
+                    <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i>Vestibulum at eros
+                </li>
+            </ul>
         </div>
     </div>
 </div>

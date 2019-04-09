@@ -12,6 +12,7 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
     <title>Hello, world!</title>
+    @yield('style')
 </head>
 <body>
 <div id="app">
@@ -19,6 +20,7 @@
     <main class=" ">
         @yield('content')
     </main>
+    @include('page.partials.footer')
 </div>
 
 <!-- Optional JavaScript -->
