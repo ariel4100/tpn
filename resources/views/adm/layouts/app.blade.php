@@ -18,11 +18,11 @@
 </head>
 <body>
 <div id="app">
-    @include('page.partials.header')
+    @include('adm.partials.header')
     <main class=" ">
         @yield('content')
     </main>
-    @include('page.partials.footer')
+
 </div>
 
 <!-- Optional JavaScript -->

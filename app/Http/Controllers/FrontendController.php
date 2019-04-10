@@ -26,4 +26,19 @@ class FrontendController extends Controller
     {
         return view('page.flota');
     }
+
+    public function clientes()
+    {
+        return view('page.clientes');
+    }
+
+    public function calidad()
+    {
+        return view('page.calidad');
+    }
+
+    public function contacto()
+    {
+        return view('page.contacto');
+    }
 }
