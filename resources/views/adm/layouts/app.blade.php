@@ -15,10 +15,29 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     @yield('style')
+    <style>
+        #sidebar ul li > a {
+            background-color: #0D7855;
+            color: #fff;
+        }
+        #sidebar ul li a {
+            display: block;
+            color: #fff;
+            padding: 10px;
+        }
+        #sidebar ul li a:hover, #sidebar ul ul .active {
+            background: #e9ebee;
+        }
+    </style>
 </head>
 <body>
 <div id="app">
-    @include('adm.partials.header')
+
+    <!-- Sidebar -->
+    <nav id="sidebar" class="" style="height: 100vh; background-color: darkgray; width: 300px; box-shadow: 0px 0px 2px black">
+        @include('adm.partials.header')
+    </nav>
+
     <main class=" ">
         @yield('content')
     </main>
@@ -35,5 +54,8 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
 @yield('style')
+<script>
+
+</script>
 </body>
 </html>
