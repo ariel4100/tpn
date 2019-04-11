@@ -41,19 +41,18 @@
     </div>
 </div>-->
 
-<div id="mySidenav" class="sidenav">
-    <ul class="m-0 p-0">
-        <li class="">
-            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="d-flex" >
-                <i class="fas fa-home mx-2"></i>
-                Home
-                <i class="fas fa-sort-down ml-auto"></i>
-            </a>
-            <ul class="collapse list-group list-group-flush " id="homeSubmenu">
-                <li><a href=" ">Contenido</a></li>
-                <li><a href=" ">Slider</a></li>
-            </ul>
-        </li>
-    </ul>
+<ul class="m-0 p-0">
+    <h1 class="text-center">LOGO</h1>
+    <li class="">
+        <a href="#home" data-toggle="collapse" aria-expanded="false" class="d-flex">
+            <i class="fas fa-home mx-2 d-flex align-items-center"></i>
+            Home
+            <i class="fas fa-sort-down ml-auto"></i>
+        </a>
+        <ul class="collapse list-group list-group-flush " id="home">
+            <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
+            <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
+        </ul>
+    </li>
+</ul>
 
-</div>

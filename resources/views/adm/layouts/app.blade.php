@@ -17,30 +17,36 @@
     @yield('style')
     <style>
         #sidebar ul li > a {
-            background-color: #0D7855;
-            color: #fff;
+            color: black;
         }
         #sidebar ul li a {
             display: block;
-            color: #fff;
+            color: black;
             padding: 10px;
         }
         #sidebar ul li a:hover, #sidebar ul ul .active {
-            background: #e9ebee;
+            background: darkgray;
+        }
+        #sidebar ul li ul li a {
+            background: #fff;
+            padding-left: 10px;
         }
     </style>
 </head>
 <body>
 <div id="app">
-
     <!-- Sidebar -->
-    <nav id="sidebar" class="" style="height: 100vh; background-color: darkgray; width: 300px; box-shadow: 0px 0px 2px black">
-        @include('adm.partials.header')
-    </nav>
+    <div class="conta iner-fluid">
+        <div class="ro w">
+            <nav id="sidebar" class="col-m d-3 " style="height: 100vh; background-color: #fff; width: 300px; box-shadow: 0px 0px 2px black">
+                @include('adm.partials.header')
+            </nav>
 
-    <main class=" ">
-        @yield('content')
-    </main>
+            <main class=" col-md-9">
+                @yield('content')
+            </main>
+        </div>
+    </div>
 
 </div>
 

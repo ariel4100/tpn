@@ -27,6 +27,6 @@ Route::get('contacto','FrontendController@contacto')->name('contacto');
 Auth::routes();
 
 Route::prefix('adm')->group(function (){
-    Route::view('/',  'adm.layouts.app');
+    Route::view('/',  'adm.home.index');
 });
 //Route::get('/home', 'HomeController@index')->name('home');
