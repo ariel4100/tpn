@@ -14,8 +14,24 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    @yield('style')
+    <!-- CSS ADM SIDEBAR -->
     <style>
+        i.fas{
+            margin-right: .5rem!important;
+            margin-left: .5rem!important;
+            display: flex;
+            align-items: center;
+        }
+        #sidebar {
+            min-width: 25%;
+            max-width: 25%;
+            background: #ffffff;
+            color: #333333;
+            transition: all 0.3s;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 3px 1px -2px rgba(0,0,0,0.12), 0 1px 5px 0 rgba(0,0,0,0.2);
+            z-index: 1;
+        }
+
         #sidebar ul li > a {
             color: black;
         }
@@ -27,27 +43,24 @@
         #sidebar ul li a:hover, #sidebar ul ul .active {
             background: darkgray;
         }
-        #sidebar ul li ul li a {
-            background: #fff;
-            padding-left: 10px;
+
+        #content{
+            transition: all 0.3s;
+            margin-left: 25%;
         }
     </style>
+    @yield('style')
 </head>
 <body>
 <div id="app">
     <!-- Sidebar -->
-    <div class="conta iner-fluid">
-        <div class="ro w">
-            <nav id="sidebar" class="col-m d-3 " style="height: 100vh; background-color: #fff; width: 300px; box-shadow: 0px 0px 2px black">
-                @include('adm.partials.header')
-            </nav>
+    @include('adm.partials.sidebar')
 
-            <main class=" col-md-9">
-                @yield('content')
-            </main>
-        </div>
-    </div>
-
+    <main class="" id="content">
+        <!-- Navbar -->
+        @include('adm.partials.header')
+        @yield('content')
+    </main>
 </div>
 
 <!-- Optional JavaScript -->
