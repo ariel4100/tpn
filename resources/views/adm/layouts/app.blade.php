@@ -4,8 +4,10 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hello, world!</title>
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -13,14 +15,14 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <script>
+        document.__API_URL = '{{ url('/') }}';
+    </script>
     <!-- CSS ADM SIDEBAR -->
     <style>
-        i.fas{
-            margin-right: .5rem!important;
-            margin-left: .5rem!important;
-            display: flex;
-            align-items: center;
+        i.material-icons{
+            margin-right: .5rem;
+            margin-left: .5rem;
         }
         #sidebar {
             min-width: 25%;
@@ -72,9 +74,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
-@yield('style')
-<script>
+<script src="//cdn.ckeditor.com/4.7.3/full/ckeditor.js"></script>
+@yield('script')
 
-</script>
 </body>
 </html>

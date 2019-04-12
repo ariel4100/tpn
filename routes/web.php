@@ -28,5 +28,14 @@ Auth::routes();
 
 Route::prefix('adm')->group(function (){
     Route::view('/',  'adm.home.index');
+
+    Route::group(['prefix' => 'slider', 'as' => 'slider'], function() {
+        Route::get('{seccion}/create', ['uses' => 'Adm\SliderController@create', 'as' => '.create']);
+        Route::post('store', ['uses' => 'Adm\SliderController@store', 'as' => '.store']);
+        Route::get('{seccion}/list', ['uses' => 'Adm\SliderController@list', 'as' => '.list']);
+        Route::get('edit/{slider}', ['uses' => 'Adm\SliderController@edit', 'as' => '.edit']);
+        Route::post('update/{slider}', ['uses' => 'Adm\SliderController@update', 'as' => '.update']);
+        Route::get('destroy/{slider}', ['uses' => 'Adm\SliderController@destroy', 'as' => '.destroy']);
+    });
 });
 //Route::get('/home', 'HomeController@index')->name('home');

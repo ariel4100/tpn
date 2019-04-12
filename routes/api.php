@@ -16,3 +16,13 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('slider', 'Adm\SliderController@apilist');
+Route::post('slider/crear', 'Adm\SliderController@crearlist');
+        /*Route::post('store', ['uses' => 'Adm\SliderController@store', 'as' => '.store']);
+        Route::get('{seccion}/list', ['uses' => 'Adm\SliderController@list', 'as' => '.list']);
+        Route::get('edit/{slider}', ['uses' => 'Adm\SliderController@edit', 'as' => '.edit']);
+        Route::post('update/{slider}', ['uses' => 'Adm\SliderController@update', 'as' => '.update']);
+        Route::get('destroy/{slider}', ['uses' => 'Adm\SliderController@destroy', 'as' => '.destroy']);*/
+

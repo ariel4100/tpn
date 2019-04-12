@@ -42,31 +42,33 @@
 </div>-->
 <nav id="sidebar" class="position-fixed h-100" style=" overflow-y:auto;">
     <ul class="list-unstyled">
-        <h1 class="text-center">LOGO</h1>
+        <div class="text-center">
+            <img src="{{ asset('uploads/logos/tpn-logo.png') }}" alt="" class="img-fluid p-2">
+        </div>
         <!---HOME---->
         <li class="">
             <a href="#home" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="fas fa-home "></i>Home<i class="fas fa-sort-down ml-auto"></i>
+                <i class="material-icons">home</i>Home<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="home">
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
+                <li><a href="{{ route('slider.list', ['seccion' => 'home']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
         <!---EMPRESA---->
         <li class="">
             <a href="#servicios" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="fas fa-building mr-2"></i>Empresa<i class="fas fa-sort-down ml-auto"></i>
+                <i class="material-icons">business</i>Empresa<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="servicios">
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
+                <li><a href="{{ route('slider.list', ['seccion' => 'empresa']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
         <!---SERVICIOS---->
         <li class="">
             <a href="#flota" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="fas fa-home mx-2 d-flex align-items-center"></i>Servicios<i class="fas fa-sort-down ml-auto"></i>
+                <i class="material-icons">assignment</i>Servicios<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="flota">
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
@@ -76,17 +78,17 @@
         <!---FLOTA---->
         <li class="">
             <a href="#clientes" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="fas fa-home mx-2 d-flex align-items-center"></i>Flota<i class="fas fa-sort-down ml-auto"></i>
+                <i class="material-icons">directions_bus</i>Flota<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="clientes">
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
+                <li><a href="{{ route('slider.list', ['seccion' => 'flota']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
         <!---CLIENTES---->
         <li class="">
             <a href="#clientes" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="fas fa-home mx-2 d-flex align-items-center"></i>Clientes<i class="fas fa-sort-down ml-auto"></i>
+                <i class="material-icons">people</i>Clientes<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="clientes">
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
@@ -96,7 +98,7 @@
         <!---POLITICA DE CALIDAD---->
         <li class="">
             <a href="#calidad" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="fas fa-home mx-2 d-flex align-items-center"></i>Politica de Calidad<i class="fas fa-sort-down ml-auto"></i>
+                <i class="material-icons">verified_user</i>Politica de Calidad<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="calidad">
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
@@ -106,7 +108,7 @@
         <!---TPN SOLIDARIA---->
         <li class="">
             <a href="#solidaria" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="fas fa-home mx-2 d-flex align-items-center"></i>TPN Solidaria<i class="fas fa-sort-down ml-auto"></i>
+                <i class="material-icons">ondemand_video</i>TPN Solidaria<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="solidaria">
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
@@ -116,7 +118,7 @@
         <!---CONTACTO---->
         <li class="">
             <a href="#contacto" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="fas fa-home mx-2 d-flex align-items-center"></i>Contacto<i class="fas fa-sort-down ml-auto"></i>
+                <i class="material-icons">contact_mail</i>Contacto<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="contacto">
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
@@ -126,7 +128,7 @@
         <!---PEDIDO DE RETIRO---->
         <li class="">
             <a href="#pedido" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="fas fa-home mx-2 d-flex align-items-center"></i>Pedido de Retiro<i class="fas fa-sort-down ml-auto"></i>
+                <i class="material-icons"></i>Pedido de Retiro<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="pedido">
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
