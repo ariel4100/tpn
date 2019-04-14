@@ -51,7 +51,7 @@
                 <i class="material-icons">home</i>Home<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="home">
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'home', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
                 <li><a href="{{ route('slider.list', ['seccion' => 'home']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>

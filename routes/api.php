@@ -17,8 +17,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('adm/home', 'Adm\ContentController@apiHome');
+Route::post('adm/home', 'Adm\ContentController@apiHomeStore');
+Route::post('adm/home/destroy', 'Adm\ContentController@apiHomeDestroy');
 
-Route::get('slider', 'Adm\SliderController@apilist');
 Route::post('slider/crear', 'Adm\SliderController@crearlist');
         /*Route::post('store', ['uses' => 'Adm\SliderController@store', 'as' => '.store']);
         Route::get('{seccion}/list', ['uses' => 'Adm\SliderController@list', 'as' => '.list']);

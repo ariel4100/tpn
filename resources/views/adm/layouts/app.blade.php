@@ -25,8 +25,8 @@
             margin-left: .5rem;
         }
         #sidebar {
-            min-width: 25%;
-            max-width: 25%;
+            min-width: 300px;
+            max-width: 300px;
             background: #ffffff;
             color: #333333;
             transition: all 0.3s;
@@ -48,7 +48,10 @@
 
         #content{
             transition: all 0.3s;
-            margin-left: 25%;
+            margin-left: 300px;
+        }
+        .container{
+            width: 75%;
         }
     </style>
     @yield('style')
@@ -75,6 +78,7 @@
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
 <script src="//cdn.ckeditor.com/4.7.3/full/ckeditor.js"></script>
+<script src="{{ asset('js/app.js') }}"></script>
 @yield('script')
 
 </body>

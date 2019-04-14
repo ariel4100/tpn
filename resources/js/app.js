@@ -5,7 +5,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+//require('./bootstrap');
 
 window.Vue = require('vue');
 window.axios = require('axios');
@@ -22,6 +22,7 @@ window.axios = require('axios');
 
 //ADMIN
 Vue.component('slider', require('./components/ExampleComponent.vue').default);
+Vue.component('home', require('./components/HomeComponent.vue').default);
 
 
 

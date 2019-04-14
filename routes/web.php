@@ -37,5 +37,16 @@ Route::prefix('adm')->group(function (){
         Route::post('update/{slider}', ['uses' => 'Adm\SliderController@update', 'as' => '.update']);
         Route::get('destroy/{slider}', ['uses' => 'Adm\SliderController@destroy', 'as' => '.destroy']);
     });
+
+    Route::group(['prefix' => 'contenido', 'as' => 'contenido'], function() {
+        Route::get('{section}/{tipo}', ['uses' => 'adm\ContentController@index', 'as' => '.index']);
+        Route::get('{section}/{tipo}/create', ['uses' => 'adm\ContentController@create', 'as' => '.create']);
+        Route::post('/store', ['uses' => 'adm\ContentController@store', 'as' => '.store']);
+        Route::get('{section}/{contenido}/edit', ['uses' => 'adm\ContentController@edit', 'as' => '.edit']);
+        Route::put('{contenido}/update', ['uses' => 'adm\ContentController@update', 'as' => '.update']);
+        Route::delete('{contenido}/destroy', ['uses' => 'adm\ContentController@destroy', 'as' => '.destroy']);
+
+
+    });
 });
 //Route::get('/home', 'HomeController@index')->name('home');
