@@ -1920,6 +1920,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['seccion', 'tipo'],
   data: function data() {
@@ -1955,6 +1957,17 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       console.log(this.home);
+    },
+    imageChangedEdit: function imageChangedEdit(e) {
+      console.log(e.target.files[0]);
+      var fileReader = new FileReader();
+      fileReader.readAsDataURL(e.target.files[0]);
+
+      fileReader.onload = function (e) {
+        e.image = e.target.result;
+      };
+
+      console.log(e);
     },
     addHome: function addHome(item) {
       var _this2 = this;
@@ -2655,29 +2668,21 @@ var render = function() {
     [
       _c("div", { staticClass: "row" }, [
         _c("div", { staticClass: "col-md-4 d-flex align-items-center" }, [
-          _c("div", { staticClass: "input-group" }, [
-            _vm._m(0),
+          _c("div", { staticClass: "custom-file" }, [
+            _c("input", {
+              staticClass: "custom-file-input",
+              attrs: { type: "file" },
+              on: { change: _vm.imageChanged }
+            }),
             _vm._v(" "),
-            _c("div", { staticClass: "custom-file" }, [
-              _c("input", {
-                staticClass: "custom-file-input",
-                attrs: {
-                  type: "file",
-                  id: "inputGroupFile01",
-                  "aria-describedby": "inputGroupFileAddon01"
-                },
-                on: { change: _vm.imageChanged }
-              }),
-              _vm._v(" "),
-              _c(
-                "label",
-                {
-                  staticClass: "custom-file-label",
-                  attrs: { for: "inputGroupFile01" }
-                },
-                [_vm._v("Choose file")]
-              )
-            ])
+            _c(
+              "label",
+              {
+                staticClass: "custom-file-label",
+                attrs: { for: "customFileLang" }
+              },
+              [_vm._v("Seleccionar Archivo")]
+            )
           ])
         ]),
         _vm._v(" "),
@@ -2759,9 +2764,32 @@ var render = function() {
         attrs: { src: _vm.home.image, width: "100px", height: "100px" }
       }),
       _vm._v(" "),
-      _vm._l(_vm.lista, function(item) {
+      _vm._l(_vm.lista, function(item, index) {
         return _c("div", { staticClass: "row" }, [
           _c("div", { staticClass: "col-md-4" }, [
+            _c("div", { staticClass: "custom-file" }, [
+              _c("input", {
+                staticClass: "custom-file-input",
+                attrs: { type: "file", id: "customFileLang", lang: "es" },
+                on: {
+                  change: function($event) {
+                    return _vm.imageChangedEdit(item)
+                  }
+                }
+              }),
+              _vm._v(" "),
+              _c(
+                "label",
+                {
+                  staticClass: "custom-file-label",
+                  attrs: { for: "customFileLang" }
+                },
+                [_vm._v("Archivo")]
+              )
+            ])
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-md-2" }, [
             _c("img", {
               attrs: { src: item.image, width: "100px", height: "100px" }
             })
@@ -2793,7 +2821,7 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _c("div", { staticClass: "col-md-4" }, [
+          _c("div", { staticClass: "col-md-2" }, [
             _c("div", { staticClass: "md-form input-group mb-3" }, [
               _c("input", {
                 directives: [
@@ -2841,23 +2869,7 @@ var render = function() {
     2
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group-prepend" }, [
-      _c(
-        "span",
-        {
-          staticClass: "input-group-text",
-          attrs: { id: "inputGroupFileAddon01" }
-        },
-        [_vm._v("Upload")]
-      )
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

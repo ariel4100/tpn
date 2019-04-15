@@ -2,15 +2,11 @@
     <div class=" ">
         <div class="row">
             <div class="col-md-4 d-flex align-items-center">
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                    </div>
-                    <div class="custom-file">
-                        <input type="file" @change="imageChanged" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                    </div>
+                <div class="custom-file">
+                    <input type="file" @change="imageChanged" class="custom-file-input"    >
+                    <label class="custom-file-label" for="customFileLang">Seleccionar Archivo</label>
                 </div>
+
             </div>
             <div class="col-md-4">
                 <div class="md-form">
@@ -27,16 +23,22 @@
             </div>
         </div>
         <img :src="home.image" width="100px" height="100px">
-        <div class="row" v-for="item in lista">
+        <div class="row" v-for="(item,index) in lista">
             <div class="col-md-4">
-                <img :src="item.image" width="100px" height="100px" >
+                <div class="custom-file">
+                    <input type="file" @change="imageChangedEdit(item)" class="custom-file-input" id="customFileLang" lang="es">
+                    <label class="custom-file-label" for="customFileLang">Archivo</label>
+                </div>
+            </div>
+            <div class="col-md-2">
+                <img :src="item.image" width="100px" height="100px">
             </div>
             <div class="col-md-4">
                 <div class="md-form">
                     <input type="text" placeholder="Nombre" v-model="item.title" class="form-control">
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-2">
                 <div class="md-form input-group mb-3">
                     <input type="text" class="form-control" v-model="item.order" placeholder="Orden">
                     <div class="input-group-append">
@@ -81,7 +83,15 @@
               }
               console.log(this.home)
             },
-
+            imageChangedEdit(e){
+                console.log(e.target.files[0]);
+                let fileReader = new FileReader();
+                fileReader.readAsDataURL(e.target.files[0]);
+                fileReader.onload = (e) => {
+                    e.image = e.target.result;
+                }
+                console.log(e)
+            },
             addHome(item){
 
                 console.log(item)

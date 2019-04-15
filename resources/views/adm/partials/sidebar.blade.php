@@ -51,37 +51,37 @@
                 <i class="material-icons">home</i>Home<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="home">
-                <li><a href="{{ route('contenido.index', ['seccion' => 'home', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'home', 'tipo' => 'lista']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
                 <li><a href="{{ route('slider.list', ['seccion' => 'home']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
         <!---EMPRESA---->
         <li class="">
-            <a href="#servicios" data-toggle="collapse" aria-expanded="false" class="d-flex">
+            <a href="#empresa" data-toggle="collapse" aria-expanded="false" class="d-flex">
                 <i class="material-icons">business</i>Empresa<i class="fas fa-sort-down ml-auto"></i>
             </a>
-            <ul class="collapse list-group list-group-flush " id="servicios">
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
+            <ul class="collapse list-group list-group-flush " id="empresa">
+                <li><a href="{{ route('contenido.index', ['seccion' => 'empresa', 'tipo' => 'lista']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
                 <li><a href="{{ route('slider.list', ['seccion' => 'empresa']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
         <!---SERVICIOS---->
         <li class="">
-            <a href="#flota" data-toggle="collapse" aria-expanded="false" class="d-flex">
+            <a href="#servicios" data-toggle="collapse" aria-expanded="false" class="d-flex">
                 <i class="material-icons">assignment</i>Servicios<i class="fas fa-sort-down ml-auto"></i>
             </a>
-            <ul class="collapse list-group list-group-flush " id="flota">
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
+            <ul class="collapse list-group list-group-flush " id="servicios">
+                <li><a href="{{ route('contenido.index', ['seccion' => 'servicios', 'tipo' => 'lista']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
         <!---FLOTA---->
         <li class="">
-            <a href="#clientes" data-toggle="collapse" aria-expanded="false" class="d-flex">
+            <a href="#flota" data-toggle="collapse" aria-expanded="false" class="d-flex">
                 <i class="material-icons">directions_bus</i>Flota<i class="fas fa-sort-down ml-auto"></i>
             </a>
-            <ul class="collapse list-group list-group-flush " id="clientes">
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
+            <ul class="collapse list-group list-group-flush " id="flota">
+                <li><a href="{{ route('contenido.index', ['seccion' => 'flota', 'tipo' => 'lista']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
                 <li><a href="{{ route('slider.list', ['seccion' => 'flota']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
@@ -91,7 +91,7 @@
                 <i class="material-icons">people</i>Clientes<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="clientes">
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'clientes', 'tipo' => 'lista']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
@@ -111,8 +111,7 @@
                 <i class="material-icons">ondemand_video</i>TPN Solidaria<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="solidaria">
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'solidaria', 'tipo' => 'lista']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
             </ul>
         </li>
         <!---CONTACTO---->

@@ -51,7 +51,7 @@
             margin-left: 300px;
         }
         .container{
-            width: 75%;
+            /*width: 75%;*/
         }
     </style>
     @yield('style')

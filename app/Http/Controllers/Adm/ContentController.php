@@ -13,7 +13,8 @@ class ContentController extends Controller
 {
     public function index($section, $tipo) {
         $contenido = Content::seccionTipo($section, null)->first();
-        return view('adm.content.index', compact('contenido', 'section'));
+        $lista = Content::seccionTipo($section, $tipo)->get();
+        return view('adm.content.index', compact('contenido', 'section','lista'));
         // Dado el tipo de contenido (imagen, texto, descargable, etc), arrojara una vista pertinente al parametro proporcionado
         /*if ($tipo == 'texto') {
             $contenido = content::seccionTipo($section, $tipo)->orderBy('order')->paginate(8);
