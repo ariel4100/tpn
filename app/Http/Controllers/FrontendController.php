@@ -41,4 +41,9 @@ class FrontendController extends Controller
     {
         return view('page.contacto');
     }
+    public function pedido()
+    {
+        return view('page.pedido');
+    }
+
 }

@@ -23,6 +23,7 @@ Route::get('clientes','FrontendController@clientes')->name('clientes');
 Route::get('politica-de-calidad','FrontendController@calidad')->name('calidad');
 Route::get('solidaria','FrontendController@solidaria')->name('solidaria');
 Route::get('contacto','FrontendController@contacto')->name('contacto');
+Route::get('pedido','FrontendController@pedido')->name('pedido');
 
 Auth::routes();
 

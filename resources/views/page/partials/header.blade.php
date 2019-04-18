@@ -35,7 +35,7 @@
             <li class="nav-item"><a class="nav-link" href="{{ route('calidad') }}">Política de Calidad</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('servicios') }}">TPN solidaria</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('contacto') }}">Contacto</a></li>
-            <a href="" class="btn btn-outline-black btn-md my-2 my-sm-0">PEDIDO DE RETIRO</a>
+            <a href="{{ route('pedido') }}" class="btn btn-outline-black btn-md my-2 my-sm-0">PEDIDO DE RETIRO</a>
 
         </ul>
     </div>
