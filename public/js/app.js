@@ -1790,72 +1790,47 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      slider: [],
-      url: document.__API_URL
+      attachments: [],
+      form: new FormData()
     };
   },
-  created: function created() {
-    this.getSlider(); //this.saveData();
-
-    /*this.getItemsOrderBy();*/
-  },
-
-  /*mounted() {
-      console.log('Component mounted.')
-  }*/
   methods: {
-    getSlider: function getSlider() {
-      var _this = this;
+    fieldChange: function fieldChange(e) {
+      var selectedFiles = e.target.files;
 
-      axios.get(this.url + "/api/slider").then(function (response) {
-        console.log(response); //this.posts = response.data
-      })["catch"](function (e) {
-        _this.errors.push(e);
-      });
+      if (!selectedFiles.length) {
+        return false;
+      }
+
+      for (var i = 0; i < selectedFiles.length; i++) {
+        this.attachments.push(selectedFiles[i]);
+      }
+
+      console.log(this.attachments);
     },
-    addSlider: function addSlider(item) {
-      var _this2 = this;
+    uploadFile: function uploadFile() {
+      for (var i = 0; i < this.attachments.length; i++) {
+        this.form.append('pics[]', this.attachments[i]);
+      }
 
-      axios.post(this.url + "/api/slider/crear", this.slider).then(function (response) {
-        console.log(response); //this.posts = response.data
-      })["catch"](function (e) {
-        _this2.errors.push(e);
+      var config = {
+        headers: {
+          'Content-Type': 'multipart/form-data'
+        }
+      };
+      document.getElementById('upload-file').value = [];
+      axios.post('http://localhost/osole/tpn/public/upload', this.form, config).then(function (response) {
+        //success
+        console.log(response);
+      })["catch"](function (response) {//error
       });
     }
+  },
+  mounted: function mounted() {
+    console.log('Component mounted.');
   }
 });
 
@@ -2523,124 +2498,38 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "container" }, [
-    _c("a", { staticClass: "btn btn-primary", attrs: { href: "" } }, [
-      _vm._v("Añadir")
-    ]),
-    _vm._v(" "),
-    _c("section", { staticClass: "mb-4" }, [
-      _vm._m(0),
-      _vm._v(" "),
-      _vm._m(1),
-      _vm._v(" "),
-      _vm._m(2),
-      _vm._v(" "),
-      _c(
-        "a",
-        {
-          staticClass: "btn btn-outline-info",
-          on: {
-            click: function($event) {
-              $event.preventDefault()
-              return _vm.addSlider(_vm.slider)
-            }
-          }
-        },
-        [_vm._v("Enviar")]
-      )
-    ]),
-    _vm._v(" "),
-    _vm._m(3)
-  ])
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "md-form" }, [
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", id: "form1" }
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "form1" } }, [_vm._v("Titulo")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "md-form" }, [
-      _c("input", {
-        staticClass: "form-control",
-        attrs: { type: "text", id: "form1" }
-      }),
-      _vm._v(" "),
-      _c("label", { attrs: { for: "form1" } }, [_vm._v("orden")])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "input-group" }, [
-      _c("div", { staticClass: "input-group-prepend" }, [
-        _c(
-          "span",
-          {
-            staticClass: "input-group-text",
-            attrs: { id: "inputGroupFileAddon01" }
-          },
-          [_vm._v("Upload")]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "custom-file" }, [
-        _c("input", {
-          staticClass: "custom-file-input",
-          attrs: {
-            type: "file",
-            id: "inputGroupFile01",
-            "aria-describedby": "inputGroupFileAddon01"
-          }
-        }),
-        _vm._v(" "),
-        _c(
-          "label",
-          {
-            staticClass: "custom-file-label",
-            attrs: { for: "inputGroupFile01" }
-          },
-          [_vm._v("Choose file")]
-        )
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-md-12" }, [
-        _c("table", { staticClass: "table" }, [
-          _c("thead", [
-            _c("tr", [
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("Imagen")]),
-              _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("Titulo")]),
-              _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("Orden")]),
-              _vm._v(" "),
-              _c("th", { attrs: { scope: "col" } }, [_vm._v("Acciones")])
-            ])
+    _c("div", { staticClass: "row" }, [
+      _c("div", { staticClass: "col-md-8 col-md-offset-2" }, [
+        _c("div", { staticClass: "panel panel-default" }, [
+          _c("div", { staticClass: "panel-heading" }, [
+            _vm._v("VUe Example Component")
           ]),
           _vm._v(" "),
-          _c("tbody")
+          _c("div", { staticClass: "panel-body" }, [
+            _c("legend", [_vm._v("Upload form")]),
+            _vm._v(" "),
+            _c("div", { staticClass: "form-group" }, [
+              _c("label", [_vm._v("Upload Files")]),
+              _vm._v(" "),
+              _c("input", {
+                staticClass: "form-control",
+                attrs: { id: "upload-file", type: "file", multiple: "" },
+                on: { change: _vm.fieldChange }
+              })
+            ]),
+            _vm._v(" "),
+            _c(
+              "button",
+              { staticClass: "btn btn-primary", on: { click: _vm.uploadFile } },
+              [_vm._v("Submit")]
+            )
+          ])
         ])
       ])
     ])
-  }
-]
+  ])
+}
+var staticRenderFns = []
 render._withStripped = true
 
 

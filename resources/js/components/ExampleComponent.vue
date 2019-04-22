@@ -1,56 +1,25 @@
 <template>
     <div class="container">
-        <a href="" class="btn btn-primary">Añadir</a>
-        <section class="mb-4">
-                <!-- Material input -->
-                <div class="md-form">
-                    <input type="text" id="form1" class="form-control">
-                    <label for="form1">Titulo</label>
-                </div>
-                <!-- Material input -->
-                <div class="md-form">
-                    <input type="text" id="form1" class="form-control">
-                    <label for="form1">orden</label>
-                </div>
-                <!-- Material input -->
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text" id="inputGroupFileAddon01">Upload</span>
-                    </div>
-                    <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="inputGroupFile01" aria-describedby="inputGroupFileAddon01">
-                        <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
-                    </div>
-                </div>
-            <a @click.prevent="addSlider(slider)" class="btn btn-outline-info">Enviar</a>
-        </section>
         <div class="row">
-            <div class="col-md-12">
-                <table class="table">
-                    <thead>
-                    <tr>
-                        <th scope="col">Imagen</th>
-                        <th scope="col">Titulo</th>
-                        <th scope="col">Orden</th>
-                        <th scope="col">Acciones</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <!--<tr  v-for="item in slider">
-                        <td><img src="{{  item.image }}" style="width: 150px"></td>
-                        <td>{{ item.title }}</td>
-                        <td>{{ item.order }}</td>
-                        <td>
-                            <a class="btn btn-rounded" href=""><i class="material-icons left">edit</i></a>
-                            <a class="btn btn-rounded" href=""><i class="material-icons left">delete</i></a>
-                        </td>
-                    </tr>
+            <div class="col-md-8 col-md-offset-2">
+                <div class="panel panel-default">
+                    <div class="panel-heading">VUe Example Component</div>
 
-                    <tr v-if="!slider.length">
-                        <td>No hay registros</td>
-                    </tr>-->
-                    </tbody>
-                </table>
+                    <div class="panel-body">
+                        <legend>Upload form</legend>
+
+                        <div class="form-group">
+                            <label>Upload Files</label>
+                            <input id="upload-file" type="file" multiple class="form-control" @change="fieldChange">
+                        </div>
+
+
+
+
+                        <button class="btn btn-primary" @click="uploadFile">Submit</button>
+
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -59,42 +28,52 @@
 <script>
     export default {
         data(){
-          return{
-              slider:[],
+            return {
+                attachments:[],
+                form: new FormData
+            }
+        },
 
-              url : document.__API_URL
-          }
-        },
-        created(){
-            this.getSlider()
-            //this.saveData();
-            /*this.getItemsOrderBy();*/
-        },
-        /*mounted() {
-            console.log('Component mounted.')
-        }*/
         methods:{
-            getSlider(){
-                axios.get(this.url+`/api/slider`)
-                    .then(response => {
-                        console.log(response);
-                        //this.posts = response.data
-                    })
-                    .catch(e => {
-                        this.errors.push(e)
-                    })
-            },
-            addSlider(item){
-                axios.post(this.url+`/api/slider/crear`,this.slider)
-                    .then(response => {
-                        console.log(response);
-                        //this.posts = response.data
-                    })
-                    .catch(e => {
-                        this.errors.push(e)
-                    })
-            },
+            fieldChange(e){
+                let selectedFiles=e.target.files;
 
+                if(!selectedFiles.length){
+                    return false;
+                }
+
+                for(let i=0;i<selectedFiles.length;i++){
+
+                    this.attachments.push(selectedFiles[i]);
+                }
+
+
+
+                console.log(this.attachments);
+
+
+            },
+            uploadFile(){
+                for(let i=0; i<this.attachments.length;i++){
+
+                    this.form.append('pics[]',this.attachments[i]);
+                }
+
+                const config = { headers: { 'Content-Type': 'multipart/form-data' } };
+                document.getElementById('upload-file').value=[];
+
+                axios.post('http://localhost/osole/tpn/public/upload',this.form,config).then(response=>{
+                    //success
+                    console.log(response);
+                })
+                    .catch(response=>{
+                        //error
+                    });
+
+            }
+        },
+        mounted() {
+            console.log('Component mounted.')
         }
     }
 </script>

@@ -51,3 +51,4 @@ Route::prefix('adm')->group(function (){
     });
 });
 //Route::get('/home', 'HomeController@index')->name('home');
+Route::post('/upload','HomeController@index');

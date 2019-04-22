@@ -11,18 +11,22 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
+    public function index(Request $request)
     {
-        return view('home');
+
+        $uploadedFiles=$request->pics;
+
+        foreach ($uploadedFiles as $file){
+            $file->store('dummy');
+
+        }
+        return response(['status'=>'success'],200);
+
     }
 }
