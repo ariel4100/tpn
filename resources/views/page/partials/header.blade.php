@@ -33,7 +33,7 @@
             <li class="nav-item"><a class="nav-link" href="{{ route('flota') }}">Flota</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('clientes') }}">Clientes</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('calidad') }}">Política de Calidad</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('servicios') }}">TPN solidaria</a></li>
+            <li class="nav-item"><a class="nav-link" href="{{ route('solidaria') }}">TPN solidaria</a></li>
             <li class="nav-item"><a class="nav-link" href="{{ route('contacto') }}">Contacto</a></li>
             <a href="{{ route('pedido') }}" class="btn btn-outline-black btn-md my-2 my-sm-0">PEDIDO DE RETIRO</a>
 

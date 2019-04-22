@@ -46,9 +46,10 @@ Route::prefix('adm')->group(function (){
         Route::get('{section}/{contenido}/edit', ['uses' => 'adm\ContentController@edit', 'as' => '.edit']);
         Route::put('{contenido}/update', ['uses' => 'adm\ContentController@update', 'as' => '.update']);
         Route::delete('{contenido}/destroy', ['uses' => 'adm\ContentController@destroy', 'as' => '.destroy']);
-
-
     });
+
+    Route::resource('categoria','adm\CategoryController');
+    Route::resource('novedad','adm\NewsController');
 });
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/upload','HomeController@index');

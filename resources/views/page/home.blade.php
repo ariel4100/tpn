@@ -13,48 +13,14 @@
     </style>
 @endsection
 @section('content')
-    <!--Carousel Wrapper-->
-    <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel" >
-        <!--Indicators-->
-        <ol class="carousel-indicators">
-            <li data-target="#carousel-example-2" data-slide-to="0" class="active"></li>
-        </ol>
-        <!--/.Indicators-->
-        <!--Slides-->
-        <div class="carousel-inner" role="listbox"  >
-            <div class="carousel-item active">
-                <div class="view">
-                    <img class="d-block w-100" height="450px" src="https://mdbootstrap.com/img/Photos/Slides/img%20(68).jpg"
-                         alt="First slide">
-                    <div class="mask rgba-black-light"></div>
-                </div>
-                <div class="carousel-caption">
-                    <h3 class="h3-responsive">Light mask</h3>
-                    <p>First text</p>
-                </div>
-            </div>
-        </div>
-        <!--/.Slides-->
-        <!--Controls-->
-        <a class="carousel-control-prev" href="#carousel-example-2" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carousel-example-2" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
-        <!--/.Controls-->
-    </div>
-    <!--/.Carousel Wrapper-->
+@include('page.partials.carousel')
 <div class="container my-5">
     <div class="row ">
-        <div class="col-md-6">
-            <h4 class="font-weight-bold" style="color: #175A9F;">Servicio de cargas y descargas generales, transporte de carga peligrosa
-                a cualquier punto del país</h4>
+        <div class="col-md-6 wow fadeInDown">
+            <h4 class="font-weight-bold tpn-blue">{!! $home->text !!}</h4>
             <a href="" class="btn btn-danger">MÁS SERVICIOS</a>
         </div>
-        <div class="col-md-6">
+        <div class="col-md-6 fadeInDown">
             <ul class="list-group">
                 <li class="list-group-item">
                     <div class="md-v-line"></div><i class="fas fa-laptop mr-4 pr-3"></i> Cras justo odio
@@ -80,7 +46,7 @@
         <div class="container py-5">
             <h5>NUESTRO EQUIPAMIENTO</h5>
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-3 ">
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aspernatur enim ex exercitationem id labore magni mollitia natus nemo nesciunt nihil quam quas quis recusandae rem, sed tempore vitae.</p>
                 </div>
                 <div class="col-md-3">
@@ -93,6 +59,11 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem corporis eaque eligendi eos excepturi fuga harum illo in nobis numquam quasi, quod repellendus repudiandae soluta tempora unde, veniam voluptates!</p>
                 </div>
             </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <img src="{{ $home->image }}" class="img-fluid" alt="">
         </div>
     </div>
 @endsection

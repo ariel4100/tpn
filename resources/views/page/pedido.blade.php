@@ -6,10 +6,10 @@
 @endsection
 @section('content')
 
-<div class="container">
+<div class="container my-5">
     <div class="row  ">
         <div class="col-md-12">
-             <h4>PEDIDO DE RETIRO</h4>
+             <h4 class="tpn-blue font-weight-bold">PEDIDO DE RETIRO</h4>
             <p>Complete el siguiente formulario para solicitar un retiro. Nuestro equipo se contactará a la brevedad con más información.</p>
         </div>
     </div>
@@ -19,7 +19,7 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card" style="background-color: #F9F9F9; border-left: 3px solid #04599B;">
-                    <div class="card-body">
+                    <div class="card-body tpn-blue font-weight-bold">
                         Cliente
                     </div>
                 </div>

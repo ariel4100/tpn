@@ -2,12 +2,12 @@
 
 @section('content')
     <div class="container p-4">
-        <a class="text-decoration-none " href="{{ route('slider.list', ['seccion' => $section]) }}"><< Volver</a>
+        <a class="text-decoration-none " href="{{ route('contenido.index',['seccion' => $section, 'tipo' => $type]) }}"><< Volver</a>
 
-        <section class=" ">
-            <form class="row" method="POST" action="{{ route('slider.store') }}" enctype="multipart/form-data">
+        <form class="row" method="POST" action="{{ route('contenido.store') }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="section" value="{{$section}}">
+                <input type="hidden" name="type" value="{{$type}}">
                 <div class="col-md-8">
                             <div class="md-form">
                                 <input type="text" id="title" name="title" class="form-control">
@@ -22,8 +22,8 @@
                         </div>
                 <div class="col-md-12">
                     <div class="md-form">
-                        <h6>Subtitulo</h6>
-                        <textarea id="subtitle" class="md-textarea form-control" name="subtitle" rows="3"></textarea>
+                        <h6>Texto</h6>
+                        <textarea id="subtitle" class="md-textarea form-control" name="text" rows="3"></textarea>
                     </div>
                 </div>
                 <div class="col-md-12">
@@ -36,7 +36,7 @@
                     <button type="submit" class="btn btn-success">Guardar</button>
                 </div>
             </form>
-        </section>
+
     </div>
 @endsection
 @section('script')

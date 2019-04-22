@@ -8,6 +8,7 @@
             <form class="row" method="POST" action="{{ route('slider.update',$slider->id) }}" enctype="multipart/form-data">
                 @csrf
                 <input type="hidden" name="section" value="{{$section}}">
+                <input type="hidden" name="type" value="{{$type}}">
                 <div class="col-md-8">
                     <div class="md-form">
                         <input type="text" id="title" name="title" class="form-control" value="{{ $slider->title }}">

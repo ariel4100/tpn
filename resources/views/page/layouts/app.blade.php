@@ -13,10 +13,18 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400" rel="stylesheet">
+    <style>
+        .tpn-blue{
+            color: #175A9F;
+        }
+        .tpn-red{
+            color: #E0333C;
+        }
+    </style>
     @yield('style')
 </head>
-<body>
+<body style="font-family: 'Montserrat'">
 <div id="app">
     @include('page.partials.header')
     <main class=" ">
@@ -34,6 +42,9 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
-@yield('style')
+<script>
+    new WOW().init();
+</script>
+@yield('script')
 </body>
 </html>
