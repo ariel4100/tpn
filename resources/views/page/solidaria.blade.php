@@ -14,7 +14,7 @@
                         <h4 class="tpn-blue font-weight-bold">{!! $n->title !!}</h4>
                         {!! Str::limit($n->text,200) !!}
                         <br>
-                        <b><a href="" class="text-uppercase tpn-red" style="font-size: 12px !important;"><i class="fas fa-arrow-right"></i> Ver más</a></b>
+                        <b><a href="{{ route('solidaria_blog',$n) }}" class="text-uppercase tpn-red" style="font-size: 12px !important;"><i class="fas fa-arrow-right"></i> Ver más</a></b>
                     </div>
                 </div>
             @empty

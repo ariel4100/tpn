@@ -16,54 +16,42 @@
 @include('page.partials.carousel')
 <div class="container my-5">
     <div class="row ">
-        <div class="col-md-6 wow fadeInDown">
+        <div class="col-md-6 wow fadeInUp">
             <h4 class="font-weight-bold tpn-blue">{!! $home->text !!}</h4>
             <a href="" class="btn btn-danger">MÁS SERVICIOS</a>
         </div>
         <div class="col-md-6 fadeInDown">
             <ul class="list-group">
-                <li class="list-group-item">
-                    <div class="md-v-line"></div><i class="fas fa-laptop mr-4 pr-3"></i> Cras justo odio
-                </li>
-                <li class="list-group-item">
-                    <div class="md-v-line"></div><i class="fas fa-bomb mr-5"></i>Dapibus ac facilisis in
-                </li>
-                <li class="list-group-item">
-                    <div class="md-v-line"></div><i class="fas fa-code mr-5"></i>Morbi leo risus
-                </li>
-                <li class="list-group-item">
-                    <div class="md-v-line"></div><i class="far fa-gem mr-5"></i>Porta ac consectetur ac
-                </li>
-                <li class="list-group-item">
-                    <div class="md-v-line"></div><i class="fas fa-cogs mr-5"></i>Vestibulum at eros
-                </li>
+                @foreach($servicios as $k=>$s)
+                    <li class="list-group-item wow fadeInUp" data-wow-delay="0.{{ $k*2 }}s">
+                        <img src="{!! $s->image !!}" alt="" class="img-fluid mr-4" style="width: 30px">
+                        {!! $s->title !!}
+                    </li>
+                @endforeach
             </ul>
         </div>
     </div>
 </div>
-
-    <div class="container-fluid " style="background-color: #DDDDDD">
-        <div class="container py-5">
-            <h5>NUESTRO EQUIPAMIENTO</h5>
-            <div class="row">
-                <div class="col-md-3 ">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium ad aspernatur enim ex exercitationem id labore magni mollitia natus nemo nesciunt nihil quam quas quis recusandae rem, sed tempore vitae.</p>
-                </div>
-                <div class="col-md-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta eaque, facilis harum illo ipsam magni mollitia nam officiis omnis pariatur possimus provident quo reprehenderit tempore voluptates! Aperiam earum error porro.</p>
-                </div>
-                <div class="col-md-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci dolorum est magnam perspiciatis quasi quis quod recusandae saepe suscipit ullam. Necessitatibus recusandae rerum sequi similique! Amet reprehenderit vel veniam veritatis!</p>
-                </div>
-                <div class="col-md-3">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab autem corporis eaque eligendi eos excepturi fuga harum illo in nobis numquam quasi, quod repellendus repudiandae soluta tempora unde, veniam voluptates!</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="container-fluid">
+@if(count($equipamientos) > 0)
+<div class="container-fluid " style="background-color: #F5F5F5">
+    <div class="container py-5">
+        <h4 class="tpn-blue font-weight-bold  wow fadeInDown">{!! $empresa->subtitle !!}</h4>
         <div class="row">
-            <img src="{{ $home->image }}" class="img-fluid" alt="">
+            @forelse($equipamientos as $k=>$e)
+                <div class="col-md-3 wow fadeInUp" data-wow-delay="0.{{ $k*2 }}s">
+                    <img src="{!! $e->image !!}" alt="" class="img-fluid my-4" >
+                    {!! $e->text !!}
+                </div>
+            @empty
+                <h4>No hay registros</h4>
+            @endforelse
         </div>
     </div>
+</div>
+@endif
+<div class="container-fluid">
+    <div class="row">
+        <img src="{{ $home->image }}" class="img-fluid" alt="">
+    </div>
+</div>
 @endsection

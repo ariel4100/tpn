@@ -52,6 +52,7 @@
             </a>
             <ul class="collapse list-group list-group-flush " id="home">
                 <li><a href="{{ route('contenido.index', ['seccion' => 'home', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Informacion</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'home', 'tipo' => 'imagen']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
                 <li><a href="{{ route('slider.list', ['seccion' => 'home']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
@@ -62,6 +63,7 @@
             </a>
             <ul class="collapse list-group list-group-flush " id="empresa">
                 <li><a href="{{ route('contenido.index', ['seccion' => 'empresa', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Informacion</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'empresa', 'tipo' => 'imagen']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
                 <li><a href="{{ route('slider.list', ['seccion' => 'empresa']) }}"><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
@@ -102,8 +104,8 @@
                 <i class="material-icons">verified_user</i>Politica de Calidad<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="calidad">
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'calidad', 'tipo' => 'imagen']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'calidad', 'tipo' => 'descarga']) }}"><i class="fas fa-chevron-right px-4"></i>Descargas</a></li>
             </ul>
         </li>
         <!---TPN SOLIDARIA---->

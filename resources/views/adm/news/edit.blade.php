@@ -44,7 +44,7 @@
                 <label class="mb-0 ml-2" for="material-url">Video URL</label>
                 <div class="md-form input-group mt-0 mb-3">
                     <div class="input-group-prepend">
-                        <span class="input-group-text md-addon" id="material-addon3">https://example.com/users/</span>
+                        <span class="input-group-text md-addon" id="material-addon3">https://www.youtube.com/watch?v=</span>
                     </div>
                     <input type="text" class="form-control" id="material-url" name="video" value="{!! $novedad->video !!}" aria-describedby="material-addon3">
                 </div>

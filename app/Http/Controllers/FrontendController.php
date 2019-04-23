@@ -13,16 +13,25 @@ class FrontendController extends Controller
 
     public function home()
     {
+        $empresa = Content::seccionTipo('empresa','texto')->first();
+        if ($empresa->destacado)
+        {
+            $equipamientos = Content::seccionTipo('empresa','imagen')->get();
+        }else{
+            $equipamientos = [];
+        }
+        $servicios = Content::seccionTipo('home','imagen')->get();
         $home = Content::seccionTipo('home','texto')->first();
         $slider = Slider::where('section','home')->get();
-        return view('page.home',compact('home','slider'));
+        return view('page.home',compact('home','slider','equipamientos','empresa','servicios'));
     }
 
     public function empresa()
     {
         $empresa = Content::seccionTipo('empresa','texto')->first();
+        $equipamientos = Content::seccionTipo('empresa','imagen')->get();
         $slider = Slider::where('section','empresa')->get();
-        return view('page.empresa',compact('empresa','slider'));
+        return view('page.empresa',compact('empresa','slider','equipamientos'));
     }
 
     public function servicios()
@@ -48,7 +57,10 @@ class FrontendController extends Controller
 
     public function calidad()
     {
-        return view('page.calidad');
+        $imagen = Content::seccionTipo('calidad','imagen')->get();
+        $descarga = Content::seccionTipo('calidad','descarga')->get();
+        return view('page.calidad',compact('imagen','descarga'));
+
     }
 
     public function contacto()
@@ -61,6 +73,13 @@ class FrontendController extends Controller
         $categorias = Category::orderBy('order')->get();
         $novedades = News::orderBy('order')->get();
         return view('page.solidaria',compact('novedades','categorias'));
+    }
+
+    public function solidaria_blog(News $news)
+    {
+        $categorias = Category::orderBy('order')->get();
+
+        return view('page.solidaria_blog',compact('news','categorias'));
     }
 
     public function pedido()

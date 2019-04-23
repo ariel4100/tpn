@@ -28,13 +28,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active"><a class="nav-link" href="{{ route('empresa') }}">Empresa</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('servicios') }}">Servicios</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('flota') }}">Flota</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('clientes') }}">Clientes</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('calidad') }}">Política de Calidad</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('solidaria') }}">TPN solidaria</a></li>
-            <li class="nav-item"><a class="nav-link" href="{{ route('contacto') }}">Contacto</a></li>
+            <li class="nav-item {{ request()->is('empresa') ? 'active' : '' }}"><a class="nav-link" href="{{ route('empresa') }}">Empresa</a></li>
+            <li class="nav-item {{ request()->is('servicios') ? 'active' : '' }}"><a class="nav-link" href="{{ route('servicios') }}">Servicios</a></li>
+            <li class="nav-item {{ request()->is('flota') ? 'active' : '' }}"><a class="nav-link" href="{{ route('flota') }}">Flota</a></li>
+            <li class="nav-item {{ request()->is('clientes') ? 'active' : '' }}"><a class="nav-link" href="{{ route('clientes') }}">Clientes</a></li>
+            <li class="nav-item {{ request()->is('calidad') ? 'active' : '' }}"><a class="nav-link" href="{{ route('calidad') }}">Política de Calidad</a></li>
+            <li class="nav-item {{ request()->is('solidaria') ? 'active' : '' }}"><a class="nav-link" href="{{ route('solidaria') }}">TPN solidaria</a></li>
+            <li class="nav-item {{ request()->is('contacto') ? 'active' : '' }}"><a class="nav-link" href="{{ route('contacto') }}">Contacto</a></li>
             <a href="{{ route('pedido') }}" class="btn btn-outline-black btn-md my-2 my-sm-0">PEDIDO DE RETIRO</a>
 
         </ul>

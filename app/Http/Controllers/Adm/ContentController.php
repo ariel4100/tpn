@@ -16,7 +16,7 @@ class ContentController extends Controller
             $contenido = Content::seccionTipo($section, $type)->first();
             return view('adm.content.index', compact('contenido', 'section','type'));
         }
-        if ($type == 'imagen') {
+        if ($type == 'imagen' || $type == 'descarga' ) {
             $contenido = Content::seccionTipo($section, $type)->get();
             return view('adm.content.lista', compact('contenido', 'section','type'));
         }
@@ -24,7 +24,7 @@ class ContentController extends Controller
 
     public function create($section, $type) {
 
-        if ($type == 'imagen') {
+        if ($type == 'imagen' || $type == 'descarga' ) {
             return view('adm.content.create', compact('section','type'));
         }
     }
@@ -41,40 +41,37 @@ class ContentController extends Controller
             $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('ficha'));
             $contenido->fill(['ficha' => asset($path)])->save();
         }
+        if ($request->destacado)
+        {
+            $contenido->fill(['destacado' => true])->save();
+        }
 
         return back()->with('status', 'Creado correctamente');
 
     }
     public function edit($section, Content $contenido) {
-        if ($contenido->type == 'texto') {
-            return view('adm.contenido.texto.edit', compact('contenido'));
-        }
-        if ($contenido->type == 'imagen') {
-            return view('adm.contenido.imagen.edit', compact('contenido'));
-        }
-        if ($contenido->type == 'descargable') {
-            return view('adm.contenido.descargable.edit', compact('contenido'));
-        }
-        if ($contenido->type == 'video') {
-            return view('adm.contenido.videos.edit', compact('contenido'));
+        if ($section) {
+            return view('adm.content.edit', compact('contenido','section'));
         }
     }
 
     public function update(Request $request, Content $contenido) {
 
-        $contenido->fill($request->all());
-        $contenido->save();
-
+        $data = $request->all();
         if ($request->file('image'))
         {
             $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('image'));
-            $contenido->fill(['image' => asset($path)])->save();
-        }
-        if ($request->type == 'ficha') {
-            $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('ficha'));
-            $contenido->fill(['ficha' => asset($path)])->save();
+            $data['image'] = asset($path);
         }
 
+        isset($data['destacado']) ? $data['destacado'] = true : $data['destacado'] = false;
+
+        if ($request->type == 'ficha') {
+            $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('ficha'));
+            $data['ficha'] = asset($path);
+        }
+
+        $contenido->update($data);
         return back()->with('status', 'Actualizado correctamente');
 
     }

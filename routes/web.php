@@ -22,6 +22,7 @@ Route::get('flota','FrontendController@flota')->name('flota');
 Route::get('clientes','FrontendController@clientes')->name('clientes');
 Route::get('politica-de-calidad','FrontendController@calidad')->name('calidad');
 Route::get('solidaria','FrontendController@solidaria')->name('solidaria');
+Route::get('solidaria/{news}','FrontendController@solidaria_blog')->name('solidaria_blog');
 Route::get('contacto','FrontendController@contacto')->name('contacto');
 Route::get('pedido','FrontendController@pedido')->name('pedido');
 
@@ -47,6 +48,16 @@ Route::prefix('adm')->group(function (){
         Route::put('{contenido}/update', ['uses' => 'adm\ContentController@update', 'as' => '.update']);
         Route::delete('{contenido}/destroy', ['uses' => 'adm\ContentController@destroy', 'as' => '.destroy']);
     });
+    // GALERIAS DE NEWS
+    Route::group(['prefix' => 'galeria', 'as' => 'galeria'], function() {
+        Route::get('{id}', ['uses' => 'adm\GaleryController@index', 'as' => '.index']);
+        Route::get('crear/galeria/{id}', ['uses' => 'adm\GaleryController@create', 'as' => '.create']);
+        Route::post('/store', ['uses' => 'adm\GaleryController@store', 'as' => '.store']);
+        Route::get('{section}/{contenido}/edit', ['uses' => 'adm\GaleryController@edit', 'as' => '.edit']);
+        Route::put('{contenido}/update', ['uses' => 'adm\GaleryController@update', 'as' => '.update']);
+        Route::delete('{contenido}/destroy', ['uses' => 'adm\GaleryController@destroy', 'as' => '.destroy']);
+    });
+
 
     Route::resource('categoria','adm\CategoryController');
     Route::resource('novedad','adm\NewsController');

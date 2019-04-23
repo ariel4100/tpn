@@ -9,6 +9,7 @@
                 <th scope="col">Imagen</th>
                 <th scope="col">Titulo</th>
                 <th scope="col">Texto</th>
+                <th scope="col">Orden</th>
                 <th scope="col">Acciones</th>
             </tr>
             </thead>
@@ -17,7 +18,8 @@
             <tr>
                 <th style="width: 150px"><img src="{!! $c->image !!}" class="img-fluid" alt=""></th>
                 <td>{!! $c->title !!}</td>
-                <td>{!! $c->text !!}</td>
+                <td>{!! str_limit($c->text,150) !!}</td>
+                <td>{!! $c->order !!}</td>
                 <td>
                     <a class="btn btn-sm btn-warning" href="{{ route('contenido.edit', [$section, $c->id]) }}"><i class="fas fa-pen"></i></a>
                     <a class="btn btn-sm btn-danger" href=" "><i class="fas fa-trash-alt"></i></a>

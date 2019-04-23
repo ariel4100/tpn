@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Content extends Model
 {
     protected $fillable = [
-        'title', 'subtitle', 'image','order','section','text','type','icon',
+        'title', 'subtitle', 'image','order','section','text','type','icon','destacado',
     ];
 
     public function scopeSeccionTipo($query, $seccion, $tipo) {
