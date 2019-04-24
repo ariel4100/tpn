@@ -3,6 +3,7 @@
 @section('content')
     <div class="container p-4">
         <a href="{{ route('galeria.create',$news->id) }}" class="btn btn-primary rounded-pill"><i class="fas fa-plus-circle mx-1"></i>Añadir</a>
+        <a class="text-decoration-none text-right" href="{{ route('novedad.index') }}"><p><< Volver</p></a>
         <div class="row">
             <div class="col-md-12">
                 <table class="table">
@@ -17,10 +18,10 @@
                     @forelse ($galery as $item)
                         <tr>
                             <td><img src="{{  $item->image }}" style="width: 150px"></td>
-                            <td>{{ $item->order }}</td>
+                            <td>{{ $item->orden }}</td>
                             <td>
-                                <a class="btn btn-sm btn-warning" href="{{ route('galery.edit', ['slider' => $item->id]) }}"><i class="fas fa-pen"></i></a>
-                                <a class="btn btn-sm btn-danger" href="{{ route('galery.destroy', ['slider' => $item->id]) }}"><i class="fas fa-trash-alt"></i></a>
+                                <a class="btn btn-sm btn-warning" href="{{ route('galeria.edit', $item->id) }}"><i class="fas fa-pen"></i></a>
+                                <a class="btn btn-sm btn-danger" href="{{ route('galeria.destroy', $item->id) }}"><i class="fas fa-trash-alt"></i></a>
                             </td>
                         </tr>
                     @empty

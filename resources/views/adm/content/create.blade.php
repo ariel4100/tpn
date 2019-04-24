@@ -9,7 +9,7 @@
                 @csrf
                 <input type="hidden" name="section" value="{{$section}}">
                 <input type="hidden" name="type" value="{{$type}}">
-            @if($section == 'home' || $section == 'calidad' )
+            @if($section == 'home' || $section == 'calidad' || $section == 'clientes')
                 <div class="col-md-8">
                     <div class="md-form">
                         <input type="text" id="Titulo" name="title" class="form-control" value="{!! isset($contenido) ? $contenido->title : null !!}">

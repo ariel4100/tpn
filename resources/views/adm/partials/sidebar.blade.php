@@ -104,6 +104,7 @@
                 <i class="material-icons">verified_user</i>Politica de Calidad<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="calidad">
+                <li><a href="{{ route('contenido.index', ['seccion' => 'calidad', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Informacion</a></li>
                 <li><a href="{{ route('contenido.index', ['seccion' => 'calidad', 'tipo' => 'imagen']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
                 <li><a href="{{ route('contenido.index', ['seccion' => 'calidad', 'tipo' => 'descarga']) }}"><i class="fas fa-chevron-right px-4"></i>Descargas</a></li>
             </ul>

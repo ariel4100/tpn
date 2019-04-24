@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Content;
+use App\Galery;
 use App\News;
 use App\Slider;
 use Illuminate\Http\Request;
@@ -59,7 +60,9 @@ class FrontendController extends Controller
     {
         $imagen = Content::seccionTipo('calidad','imagen')->get();
         $descarga = Content::seccionTipo('calidad','descarga')->get();
-        return view('page.calidad',compact('imagen','descarga'));
+        $calidad = Content::seccionTipo('calidad','texto')->first();
+        $data = json_decode($calidad->text);
+        return view('page.calidad',compact('imagen','descarga','data','calidad'));
 
     }
 
@@ -72,19 +75,24 @@ class FrontendController extends Controller
     {
         $categorias = Category::orderBy('order')->get();
         $novedades = News::orderBy('order')->get();
-        return view('page.solidaria',compact('novedades','categorias'));
+        return view('page.novedades.solidaria',compact('novedades','categorias'));
     }
 
     public function solidaria_blog(News $news)
     {
         $categorias = Category::orderBy('order')->get();
-
-        return view('page.solidaria_blog',compact('news','categorias'));
+        $galery = Galery::where('new_id',$news->id)->get();
+        return view('page.novedades.solidaria_blog',compact('news','categorias','galery'));
     }
 
     public function pedido()
     {
         return view('page.pedido');
+    }
+
+    public function presupuesto()
+    {
+        return view('page.presupuesto');
     }
 
 }

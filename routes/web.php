@@ -25,6 +25,8 @@ Route::get('solidaria','FrontendController@solidaria')->name('solidaria');
 Route::get('solidaria/{news}','FrontendController@solidaria_blog')->name('solidaria_blog');
 Route::get('contacto','FrontendController@contacto')->name('contacto');
 Route::get('pedido','FrontendController@pedido')->name('pedido');
+Route::get('presupuesto','FrontendController@presupuesto')->name('presupuesto');
+
 
 Auth::routes();
 
@@ -53,9 +55,9 @@ Route::prefix('adm')->group(function (){
         Route::get('{id}', ['uses' => 'adm\GaleryController@index', 'as' => '.index']);
         Route::get('crear/galeria/{id}', ['uses' => 'adm\GaleryController@create', 'as' => '.create']);
         Route::post('/store', ['uses' => 'adm\GaleryController@store', 'as' => '.store']);
-        Route::get('{section}/{contenido}/edit', ['uses' => 'adm\GaleryController@edit', 'as' => '.edit']);
+        Route::get('{id}/edit', ['uses' => 'adm\GaleryController@edit', 'as' => '.edit']);
         Route::put('{contenido}/update', ['uses' => 'adm\GaleryController@update', 'as' => '.update']);
-        Route::delete('{contenido}/destroy', ['uses' => 'adm\GaleryController@destroy', 'as' => '.destroy']);
+        Route::get('{id}/destroy', ['uses' => 'adm\GaleryController@destroy', 'as' => '.destroy']);
     });
 
 

@@ -6,7 +6,7 @@
                     <a href="">SEGUIMIENTO DE CARGA</a>
                 </div>
                 <div class="p-2 bd-highlight">
-                    <a href="">SOLICITUD DE PRESUPUESTO</a>
+                    <a href="{{ route('presupuesto') }}" {{ request()->is('presupuesto') ? 'active' : '' }}>SOLICITUD DE PRESUPUESTO</a>
                 </div>
                 <div class="p-2 bd-highlight">
                     <a href=""><i class="fas fa-search"></i></a>

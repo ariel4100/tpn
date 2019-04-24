@@ -10,13 +10,15 @@
         @foreach($slider as $key=>$s)
             <div class="carousel-item active">
                 <div class="view">
-                    <img class="d-block w-100" height="450px" src="{!! $s->image !!}"
+                    <img class="d-block w-100"   src="{!! $s->image !!}"
                          alt="First slide">
-                    <div class="mask rgba-black-light"></div>
+                    <div class="mask tpn-rgba" style=""></div>
                 </div>
-                <div class="carousel-caption">
-                    <h3 class="h3-responsive">{!! $s->title !!}</h3>
-                    <p>{!! $s->subtitle !!}</p>
+                <div class="carousel-caption d-none d-md-block wow fadeInLeft" style="right: 0px; left: 0px; text-align: left; top: 30%">
+                    <div class="container" >
+                        <h3 class="h3-responsive">{!! $s->title !!}</h3>
+                        <p>{!! $s->subtitle !!}</p>
+                    </div>
                 </div>
             </div>
         @endforeach

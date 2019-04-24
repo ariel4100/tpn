@@ -74,7 +74,55 @@
                     </div>
                 </div>
             @endif
-
+            @if($section == 'calidad')
+                <div class="col-md-12">
+                    <div class="md-form">
+                        <input type="text" id="Titulo" name="title" class="form-control" value="{!! isset($data) ? $data['title'] : null !!}">
+                        <label for="Titulo">Titulo</label>
+                    </div>
+                    <div class="md-form">
+                        <h6>Texto</h6>
+                        <textarea id="text" class="md-textarea form-control" name="text" rows="3">{!! isset($data) ? $data['text'] : null !!}</textarea>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="md-form">
+                        <input type="text" id="Subtitulo" name="subtitle" class="form-control" value="{!!  isset($data) ? $data['subtitle'] : null !!}">
+                        <label for="Subtitulo">Subtitulo</label>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="md-form">
+                        <input type="text" id="title_2" name="title_2" class="form-control" value="{!! isset($data) ? $data['title_2'] : null !!}">
+                        <label for="title_2">Titulo</label>
+                    </div>
+                    <div class="md-form">
+                        <h6>Texto</h6>
+                        <textarea id="text_2" class="md-textarea form-control" name="text_2" rows="3">{!! isset($data) ? $data['text_2'] : null !!}</textarea>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="md-form">
+                        <input type="text" id="Subtitulo_2" name="subtitle_2" class="form-control" value="{!!  isset($data) ? $data['subtitle_2']: null !!}">
+                        <label for="Subtitulo_2">Subtitulo</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileLang" name="image" lang="es">
+                        <label class="custom-file-label" for="customFileLang">Seleccionar Imagen</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileLang" name="image" lang="es">
+                        <label class="custom-file-label" for="customFileLang">Seleccionar Imagen</label>
+                    </div>
+                </div>
+                <div class="col-md-12 my-5 text-center">
+                    <img src="{{ $contenido->image }}" alt="" class="img-fluid" style="height: 200px">
+                </div>
+            @endif
             <div class="col-md-12 my-4 text-right">
                 <button type="submit" class="btn btn-success">Guardar</button>
             </div>
@@ -84,7 +132,7 @@
 @section('script')
     <script>
         CKEDITOR.replace('text');
-
+        CKEDITOR.replace('text_2');
         CKEDITOR.config.width = '100%';
     </script>
 @stop

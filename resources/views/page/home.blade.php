@@ -23,7 +23,7 @@
         <div class="col-md-6 fadeInDown">
             <ul class="list-group">
                 @foreach($servicios as $k=>$s)
-                    <li class="list-group-item wow fadeInUp" data-wow-delay="0.{{ $k*2 }}s">
+                    <li class="list-group-item wow fadeInUp d-flex align-items-center" data-wow-delay="0.{{ $k*2 }}s">
                         <img src="{!! $s->image !!}" alt="" class="img-fluid mr-4" style="width: 30px">
                         {!! $s->title !!}
                     </li>
@@ -50,7 +50,7 @@
 </div>
 @endif
 <div class="container-fluid">
-    <div class="row">
+    <div class="row justify-content-center">
         <img src="{{ $home->image }}" class="img-fluid" alt="">
     </div>
 </div>

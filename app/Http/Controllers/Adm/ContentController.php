@@ -12,7 +12,12 @@ use Illuminate\Support\Facades\Storage;
 class ContentController extends Controller
 {
     public function index($section, $type) {
-        if ($type == 'texto') {
+        if ($section == 'calidad' && $type == 'texto') {
+            $contenido = Content::seccionTipo($section, $type)->first();
+            $data =  json_decode($contenido->text,true);
+            return view('adm.content.index', compact('contenido', 'section','type','data'));
+        }
+        if ($type == 'texto' && $section != 'calidad') {
             $contenido = Content::seccionTipo($section, $type)->first();
             return view('adm.content.index', compact('contenido', 'section','type'));
         }
@@ -56,22 +61,27 @@ class ContentController extends Controller
     }
 
     public function update(Request $request, Content $contenido) {
-
-        $data = $request->all();
-        if ($request->file('image'))
+        if ($request->section == 'calidad' && $request->section == 'texto')
         {
-            $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('image'));
-            $data['image'] = asset($path);
+            $data = $request->all();
+            $contenido->update(['text'=> json_encode($data)]);
+        }else{
+            $data = $request->all();
+            if ($request->file('image'))
+            {
+                $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('image'));
+                $data['image'] = asset($path);
+            }
+
+            isset($data['destacado']) ? $data['destacado'] = true : $data['destacado'] = false;
+
+            if ($request->type == 'ficha') {
+                $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('ficha'));
+                $data['ficha'] = asset($path);
+            }
+
+            $contenido->update($data);
         }
-
-        isset($data['destacado']) ? $data['destacado'] = true : $data['destacado'] = false;
-
-        if ($request->type == 'ficha') {
-            $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('ficha'));
-            $data['ficha'] = asset($path);
-        }
-
-        $contenido->update($data);
         return back()->with('status', 'Actualizado correctamente');
 
     }
