@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e640220f-0409-414d-b8d2-2e9c0ba84e29" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/page/novedades/solidaria_blog.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Galery.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Galery.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Adm/ContentController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Adm/ContentController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Adm/GaleryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Adm/GaleryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adm/content/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adm/content/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adm/content/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adm/content/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adm/news/galery/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adm/news/galery/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adm/news/galery/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adm/news/galery/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adm/news/galery/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adm/news/galery/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/adm/partials/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/adm/partials/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/calidad.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/calidad.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/contacto.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/contacto.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/home.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/page/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/partials/carousel.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/partials/carousel.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/page/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/partials/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/solidaria.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/page/novedades/solidaria.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/solidaria_blog.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/page/welcome.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -76,11 +57,44 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="solidaria.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="solidaria.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/page/novedades/solidaria.blade.php">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="presupuesto.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/page/presupuesto.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/page/layouts/app.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="33" column="15" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.blade.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/page/partials/header.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="162">
-              <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="137" />
+              <caret line="36" column="99" selection-start-line="36" selection-start-column="99" selection-end-line="36" selection-end-column="99" />
+              <caret line="35" column="100" selection-start-line="35" selection-start-column="100" selection-end-line="35" selection-end-column="100" />
+              <caret line="34" column="98" selection-start-line="34" selection-start-column="98" selection-end-line="34" selection-end-column="98" />
+              <caret line="33" column="99" selection-start-line="33" selection-start-column="99" selection-end-line="33" selection-end-column="99" />
+              <caret line="32" column="96" selection-start-line="32" selection-start-column="96" selection-end-line="32" selection-end-column="96" />
+              <caret line="31" column="100" selection-start-line="31" selection-start-column="100" selection-end-line="31" selection-end-column="100" />
+              <caret line="30" column="98" selection-start-line="30" selection-start-column="98" selection-end-line="30" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -103,7 +117,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/routes/api.php" />
         <option value="$PROJECT_DIR$/resources/js/components/HomeComponent.vue" />
         <option value="$PROJECT_DIR$/resources/views/adm/content/empresa.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/adm/content/servicios.blade.php" />
@@ -135,7 +148,6 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Adm/SliderController.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_04_23_192429_create_galeries_table.php" />
         <option value="$PROJECT_DIR$/resources/views/adm/news/index.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/page/partials/carousel.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/page/home.blade.php" />
         <option value="$PROJECT_DIR$/app/Galery.php" />
         <option value="$PROJECT_DIR$/resources/views/adm/news/galery/create.blade.php" />
@@ -144,16 +156,18 @@
         <option value="$PROJECT_DIR$/app/Http/Controllers/Adm/GaleryController.php" />
         <option value="$PROJECT_DIR$/resources/views/page/solidaria_blog.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/adm/content/create.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/page/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/page/contacto.blade.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/page/partials/header.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/page/presupuesto.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/adm/partials/sidebar.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/adm/content/index.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/FrontendController.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/Adm/ContentController.php" />
         <option value="$PROJECT_DIR$/resources/views/page/calidad.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/novedades/solidaria.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/partials/carousel.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/presupuesto.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/layouts/app.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/page/partials/header.blade.php" />
       </list>
     </option>
   </component>
@@ -346,7 +360,15 @@
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="page" type="462c0819:PsiDirectoryNode" />
-              <item name="novedades" type="462c0819:PsiDirectoryNode" />
+              <item name="layouts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="tpn" type="b2602c69:ProjectViewProjectNode" />
+              <item name="tpn" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="page" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="tpn" type="b2602c69:ProjectViewProjectNode" />
@@ -410,12 +432,12 @@
       <workItem from="1556018250901" duration="15271000" />
       <workItem from="1556040166087" duration="5361000" />
       <workItem from="1556047420431" duration="2190000" />
-      <workItem from="1556105354545" duration="23908000" />
+      <workItem from="1556105354545" duration="24525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="192002000" />
+    <option name="totallyTimeSpent" value="192619000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -648,13 +670,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/page/partials/carousel.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="44" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/page/novedades/solidaria_blog.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="36">
@@ -669,38 +684,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/page/layouts/app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="58" column="9" lean-forward="true" selection-start-line="58" selection-start-column="9" selection-end-line="58" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/page/welcome.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1350" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/page/partials/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="50" selection-start-line="8" selection-start-column="50" selection-end-line="8" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/page/presupuesto.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="118" column="14" selection-start-line="118" selection-start-column="14" selection-end-line="118" selection-end-column="55" />
-          <folding>
-            <element signature="e#447#480#0#HTML" expanded="true" />
-            <element signature="e#632#665#0#HTML" expanded="true" />
-            <element signature="e#87#626#0#HTML" />
-            <element signature="e#2027#2060#0#HTML" expanded="true" />
-            <element signature="e#2626#2647#0#HTML" expanded="true" />
-            <element signature="e#4204#4237#0#HTML" expanded="true" />
-          </folding>
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/page/home.blade.php">
@@ -786,10 +772,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/page/partials/carousel.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="77" lean-forward="true" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/page/novedades/solidaria.blade.php">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="23" column="39" selection-start-line="23" selection-start-column="39" selection-end-line="23" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/page/presupuesto.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="64" column="38" selection-start-line="64" selection-start-column="38" selection-end-line="64" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/page/layouts/app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="33" column="15" selection-start-line="33" selection-start-column="9" selection-end-line="33" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/page/partials/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="137" />
+          <caret line="36" column="99" selection-start-line="36" selection-start-column="99" selection-end-line="36" selection-end-column="99" />
+          <caret line="35" column="100" selection-start-line="35" selection-start-column="100" selection-end-line="35" selection-end-column="100" />
+          <caret line="34" column="98" selection-start-line="34" selection-start-column="98" selection-end-line="34" selection-end-column="98" />
+          <caret line="33" column="99" selection-start-line="33" selection-start-column="99" selection-end-line="33" selection-end-column="99" />
+          <caret line="32" column="96" selection-start-line="32" selection-start-column="96" selection-end-line="32" selection-end-column="96" />
+          <caret line="31" column="100" selection-start-line="31" selection-start-column="100" selection-end-line="31" selection-end-column="100" />
+          <caret line="30" column="98" selection-start-line="30" selection-start-column="98" selection-end-line="30" selection-end-column="98" />
         </state>
       </provider>
     </entry>

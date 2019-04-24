@@ -30,7 +30,10 @@
             background: -webkit-linear-gradient(left, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
             background: linear-gradient(to right, rgba(0,0,0,0.7) 0%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
             filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
-
+        }
+        .activo{
+            border-bottom: 2px solid #DE3641;
+            color: #DE3641 !important;
         }
     </style>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
