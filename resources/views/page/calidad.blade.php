@@ -2,17 +2,18 @@
 
 @section('content')
 <div class="container my-5">
+    <h4 class="tpn-blue font-weight-bold my-4">{!! $data->title !!}</h4>
     <div class="row">
-
-        <div class="col-md-6 wow fadeInUp">
-            <h4 class="tpn-blue font-weight-bold">{!! $data->title !!}</h4>
+        <div class="col-md-6 wow fadeInUp" style="font-family: Montserrat Light;">
             {!! $data->text !!}
         </div>
-        <div class="col-md-6 d-flex align-items-center wow fadeInUp">
-            <h4 class="tpn-red font-weight-bold">{!! $data->subtitle !!}</h4>
+        <div class="col-md-6 wow fadeInUp">
+            <h4 class="tpn-red">{!! $data->subtitle !!}</h4>
+            <img src="{!! isset( $data->image) ?  $data->image : null !!}" alt="" class="">
+            <img src="{!! isset( $data->image_2) ?  $data->image_2 : null!!}" alt="" class="">
         </div>
     </div>
-    <div class="row">
+    <div class="row mt-5">
         @foreach($descarga as $k=>$d)
         <div class="col-md-6 mb-5 wow fadeInUp"  data-wow-delay="0.{!! $k+1 !!}s">
             <div class="card z-depth-0 rounded-0" style="background-color: #F8F8F8; border: 1px solid #DDDDDD;">
@@ -21,7 +22,7 @@
                         <div class="col-md-10 d-flex align-items-center">
                             <div class="">
                                 <span class="tpn-blue font-weight-bold"> {!! $d->title !!}</span>
-                                <br>Ver Certificación
+                                <br><span style="font-family: 'Montserrat Light'">Ver Certificado</span>
                             </div>
                         </div>
                         <div class="col-md-2 d-flex align-items-center">
@@ -33,16 +34,16 @@
         </div>
         @endforeach
     </div>
-    <h4 class="tpn-blue font-weight-bold wow fadeInUp">{!! $data->title_2 !!}</h4>
+    <h4 class="tpn-blue font-weight-bold wow fadeInUp my-4">{!! $data->title_2 !!}</h4>
     <div class="row">
-        <div class="col-md-6 wow fadeInUp">
+        <div class="col-md-6 wow fadeInUp" style="font-family: Montserrat Light;">
             {!! $data->text_2 !!}
         </div>
         <div class="col-md-6 wow fadeInUp">
-            <p>{!! $data->subtitle_2 !!}</p>
+            <p style="font-family: Montserrat Light;">{!! $data->subtitle_2 !!}</p>
             @foreach($imagen as $k=>$i)
                 <img src="{!! $i->image !!}" alt="" class="img-fluid">
-                <p><b>{!! $i->title !!}</b></p>
+                <p class="py-2"><b>{!! $i->title !!}</b></p>
             @endforeach
         </div>
     </div>

@@ -48,7 +48,9 @@
             </div>
             <!--/.Carousel Wrapper-->
             <h4 class="tpn-blue font-weight-bold my-4">{!! $news->title !!}</h4>
-            {!! $news->text !!}
+            <div style="font-family: Montserrat Light;">
+                {!! $news->text !!}
+            </div>
             <div class="card z-depth-0 rounded-0 p-5 my-5" style="background-color: #F9F9F9">
                 <div class="row align-items-center">
                     <div class="col-md-6">
@@ -56,7 +58,7 @@
                             mirá el video a continuación</p>
                     </div>
                     <div class="col-md-6">
-
+                        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/{!! $news->video !!}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                 </div>
             </div>

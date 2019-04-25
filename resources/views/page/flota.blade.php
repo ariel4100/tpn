@@ -10,7 +10,7 @@
                     <div class="col-md-2 text-right">
                         <img src="{!! $f->image !!}" alt="" class="img-fluid">
                     </div>
-                    <div class="col-md-10">
+                    <div class="col-md-10" style="font-family: 'Montserrat Light'">
                         {!! $f->text !!}
                     </div>
                 </div>
@@ -21,7 +21,7 @@
     </div>
 </div>
  <div class="d-flex align-items-center justify-content-center" style="background-image: url('{!! $flota->image !!}'); height: 300px; background-repeat: no-repeat; background-position: center; background-size: cover;">
-     <div class="container">
+     <div class="container" >
          <div class="row">
              <div class="col-md-8 wow fadeInDown">
                   {!! $flota->text !!}

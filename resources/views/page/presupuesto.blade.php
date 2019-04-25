@@ -64,7 +64,9 @@
             </div>-->
             <div class="row wow fadeIn" id="segundo" style="display: none">
                 <div class="md-form col-md-3">
-                    <input type="text" class="form-control" placeholder="Dimensiones del bulto 1">
+                    <input type="text" id="bulto" class="form-control" placeholder="Dimensiones del bulto 1">
+                    <label for="bulto" class="pl-3">BULTOS</label>
+                    <a href="" class="btn btn-outline-danger">añadir bulto</a>
                 </div>
                 <div class="md-form col-md-3">
                     <input type="text" class="form-control" placeholder="Peso del bulto 1">

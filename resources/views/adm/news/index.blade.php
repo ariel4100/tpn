@@ -24,7 +24,7 @@
                             <td>{{ $item->order }}</td>
                             <td>
                                 <a class="btn btn-sm btn-warning" href="{{ route('novedad.edit', $item->id) }}"><i class="fas fa-pen"></i></a>
-                                <a class="btn btn-sm btn-danger" href="{{ route('novedad.destroy', $item->id) }}"><i class="fas fa-trash-alt"></i></a>
+                                <a class="btn btn-sm btn-danger" onclick="return confirm('¿Realmente desea eliminar este registro?')" href="{{ route('novedad.destroy', $item->id) }}"><i class="fas fa-trash-alt"></i></a>
                                 <a class="btn btn-sm btn-info" href="{{ route('galeria.index',$item->id) }}"><i class="far fa-images"></i></a>
                             </td>
                         </tr>

@@ -10,7 +10,7 @@
                         <span class="tpn-blue p-2 font-weight-bold" style="background-color: #ECECEC;">{!! $n->Category->title !!}</span>
                         <img src="{!! $n->image !!}" alt="" class="img-fluid">
                     </div>
-                    <div class="col-md-8 wow fadeIn">
+                    <div class="col-md-8 wow fadeIn" style="font-family: Montserrat Light;">
                         <h4 class="tpn-blue font-weight-bold">{!! $n->title !!}</h4>
                         {!! Str::limit($n->text,200) !!}
                         <br>

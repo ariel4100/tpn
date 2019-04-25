@@ -15,6 +15,7 @@
     <!-- Material Design Bootstrap -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/css/mdb.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
     <script>
         document.__API_URL = '{{ url('/') }}';
     </script>
@@ -51,12 +52,12 @@
             margin-left: 300px;
         }
         .container{
-            /*width: 75%;*/
+            width: 75%;
         }
     </style>
     @yield('style')
 </head>
-<body>
+<body style="font-family: 'Montserrat Light'; ">
 <div id="app">
     <!-- Sidebar -->
     @include('adm.partials.sidebar')

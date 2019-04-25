@@ -18,7 +18,7 @@
     <div class="row ">
         <div class="col-md-6 wow fadeInUp">
             <h4 class="font-weight-bold tpn-blue">{!! $home->text !!}</h4>
-            <a href="" class="btn btn-danger">MÁS SERVICIOS</a>
+            <a href="{{ route('servicios') }}" class="btn btn-danger">MÁS SERVICIOS</a>
         </div>
         <div class="col-md-6 fadeInDown">
             <ul class="list-group">

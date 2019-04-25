@@ -1,17 +1,5 @@
 @extends('page.layouts.app')
-@section('style')
-    <style>
-        .list-group-item {
-            position: relative;
-            display: block;
-            padding: .50rem 1.25rem;
-            margin-bottom: -1px;
-            background-color: #fff;
-            border: unset;
-        }
 
-    </style>
-@endsection
 @section('content')
 <div class="container-fluid my-5">
     <div class="row">
@@ -28,38 +16,44 @@
         <div class="col-md-9">
             <div class="row">
                 <div class="col-md-6">
+                    <p class="tpn-blue pl-4">{!! $data->title !!}</p>
                     <ul class="list-group">
                         <li class="list-group-item wow fadeInUp border-0 d-flex align-items-center" data-wow-delay="0.5s">
                             <i class="material-icons tpn-red mr-3">location_on</i>
-                            Av. Don Pedro de Mendoza 2719,
-                            CABA, Argentina
+                            {!! $data->direccion !!}
                         </li>
                         <li class="list-group-item wow fadeInUp border-0 d-flex align-items-center" data-wow-delay="0.5s">
                             <i class="material-icons tpn-red mr-3">phone_in_talk</i>
-                            (54-11) 4301-8500 /8142 / 5605
-                            (54-11) 4302-0808
+                            <div class="">
+                                <a href="tel:{!! $data->telefono_1 !!}" style="color: #595959">{!! $data->telefono_1 !!}</a>
+                                <br>
+                                <a href="tel:{!! $data->telefono_2 !!}" style="color: #595959">{!! $data->telefono_2 !!}</a>
+                            </div>
                         </li>
                         <li class="list-group-item wow fadeInUp border-0 d-flex align-items-center" data-wow-delay="0.5s">
                             <i class="material-icons tpn-red mr-3">send</i>
-                             tpnlogistica@transpuertonuevo.com.ar
+                            <a href="mailto:{!! $data->correo !!}" style="color: #595959">{!! $data->correo !!}</a>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-6">
+                    <p class="tpn-blue pl-4">{!! $data->title_2 !!}</p>
                     <ul class="list-group">
                         <li class="list-group-item wow fadeInUp border-0 d-flex align-items-center" data-wow-delay="0.5s">
                             <i class="material-icons tpn-red mr-3">location_on</i>
-                            Av. Don Pedro de Mendoza 2719,
-                            CABA, Argentina
+                            {!! $data->direccion_2 !!}
                         </li>
                         <li class="list-group-item wow fadeInUp border-0 d-flex align-items-center" data-wow-delay="0.5s">
                             <i class="material-icons tpn-red mr-3">phone_in_talk</i>
-                            (54-11) 4301-8500 /8142 / 5605
-                            (54-11) 4302-0808
+                            <div class="">
+                                <a href="tel:{!! $data->central_telefono_1 !!}" style="color: #595959">{!! $data->central_telefono_1 !!}</a>
+                                <br>
+                                <a href="tel:{!! $data->central_telefono_2 !!}" style="color: #595959">{!! $data->central_telefono_2 !!}</a>
+                            </div>
                         </li>
                         <li class="list-group-item wow fadeInUp border-0 d-flex align-items-center" data-wow-delay="0.5s">
                             <i class="material-icons tpn-red mr-3">send</i>
-                            tpnlogistica@transpuertonuevo.com.ar
+                            <a href="mailto:{!! $data->correo_2 !!}" style="color: #595959">{!! $data->correo_2 !!}</a>
                         </li>
                     </ul>
                 </div>
@@ -79,7 +73,7 @@
                 </div>
                 <div class="md-form col-md-12">
                     <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
-                    <label for="form7">Material textarea</label>
+                    <label for="form7">Mensaje</label>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center">
                     <div class="g-recaptcha" data-sitekey="6LfxBKAUAAAAALkxGpbMmbopqVeVZYR3Q64Hg-ts"></div>

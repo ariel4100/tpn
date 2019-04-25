@@ -1,82 +1,79 @@
 <!-- Footer -->
-<footer class="page-footer font-small unique-color-dark">
-
-
-    <!-- Footer Links -->
-    <div class="container text-center text-md-left pt-5">
-
-        <!-- Grid row -->
+<footer class="page-footer font-small" style="background-color: #303030">
+    <div class="container  text-md-left pt-5">
         <div class="row mt-3">
-
-            <!-- Grid column -->
-            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
-
-                <!-- content -->
-
-                <p>Here you can use rows and columns here to organize your footer content. Lorem ipsum dolor sit amet, consectetur
-                    adipisicing elit.</p>
-
+            <div class="col-sm-12 col-md-6 col-lg-2 col-xl-2 mx-auto mb-4">
+                @php($logos = \App\Content::seccionTipo('logos','texto')->first())
+                @php($data = json_decode($logos->text))
+                <img src="{!! $data->image_3 !!}" alt="" class="img-fluid">
+                <div class="d-flex my-5">
+                    <p style="font-size: 13px">SEGUINOS EN</p>
+                    <a href="" class="tpn-blue mx-2"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="" class="tpn-blue"><i class="fab fa-youtube fa-lg"></i></a>
+                </div>
             </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 mx-auto mb-4">
-                <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">Secciones</h6>
-
-                <div class="d-flex justify-content-center ">
-                    <div class="mx-2">
-                        <p><a href="#!">Inicio</a></p>
-                        <p><a href="#!">Empresa</a></p>
-                        <p><a href="#!">Servicios</a></p>
-                        <p><a href="#!">Flota</a></p>
-                        <p><a href="#!">Clientes</a></p>
+            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mx-auto mb-4">
+                <h6 class="text-uppercase">Secciones</h6>
+                <div class="d-flex justify-content-between " style="font-size: 13px;">
+                    <div class="">
+                        <p><a href="{{ route('home') }}" style="color: #888888;">Inicio</a></p>
+                        <p><a href="{{ route('empresa') }}" style="color: #888888;">Empresa</a></p>
+                        <p><a href="{{ route('servicios') }}" style="color: #888888;">Servicios</a></p>
+                        <p><a href="{{ route('flota') }}" style="color: #888888;">Flota</a></p>
+                        <p><a href="{{ route('clientes') }}" style="color: #888888;">Clientes</a></p>
                     </div>
-                    <div class="mx-2">
-                        <p><a href="#!">Politica de Calidad</a></p>
-                        <p><a href="#!">TPN Solidaria</a></p>
-                        <p><a href="#!">Solicitud de Presupuesto</a></p>
-                        <p><a href="#!">Seguimiento de Carga</a></p>
-                        <p><a href="#!">Contacto</a></p>
+                    <div class="">
+                        <p><a href="{{ route('calidad') }}" style="color: #888888;">Politica de Calidad</a></p>
+                        <p><a href="{{ route('solidaria') }}" style="color: #888888;">TPN Solidaria</a></p>
+                        <p><a href="{{ route('presupuesto') }}" style="color: #888888;">Solicitud de Presupuesto</a></p>
+                        <p><a href="http://tpn.setuponline.com.ar" target="_blank" style="color: #888888;">Seguimiento de Carga</a></p>
+                        <p><a href="{{ route('contacto') }}" style="color: #888888;">Contacto</a></p>
                     </div>
                 </div>
-
             </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">BASE OPERATIVA</h6>
-
-                <p>
-                    <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                <p>
-                    <i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                <p>
-                    <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                <p>
-                    <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-
+            @php($contacto = \App\Content::seccionTipo('contacto','texto')->first())
+            @php($data = json_decode($contacto->text))
+            <div class="col-sm-12 col-md-6 col-lg-4 col-xl-4 mx-auto mb-md-0 mb-4 ">
+                <h6 class="text-uppercase">BASE OPERATIVA</h6>
+                <ul class="list-group" style="font-size: 13px">
+                    <li class="list-group-item border-0 d-flex align-items-center px-0" style="background-color: unset" data-wow-delay="0.5s">
+                        <i class="material-icons tpn-red mr-3">location_on</i>
+                        {!! $data->direccion !!}
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center px-0" style="background-color: unset" data-wow-delay="0.5s">
+                        <i class="material-icons tpn-red mr-3">phone_in_talk</i>
+                        <div class="">
+                            <a href="tel:{!! $data->telefono_1 !!}">{!! $data->telefono_1 !!}</a>
+                            <br>
+                            <a href="tel:{!! $data->telefono_2 !!}">{!! $data->telefono_2 !!}</a>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center px-0" style="background-color: unset" data-wow-delay="0.5s">
+                        <i class="material-icons tpn-red mr-3">send</i>
+                        <a href="mailto:{!! $data->correo !!}">{!! $data->correo !!}</a>
+                    </li>
+                </ul>
             </div>
-            <!-- Grid column -->
-
-            <!-- Grid column -->
-            <div class="col-sm-12 col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
-
-                <!-- Links -->
-                <h6 class="text-uppercase font-weight-bold">ADMINISTRACIÓN</h6>
-
-                <p>
-                    <i class="fas fa-home mr-3"></i> New York, NY 10012, US</p>
-                <p>
-                    <i class="fas fa-envelope mr-3"></i> info@example.com</p>
-                <p>
-                    <i class="fas fa-phone mr-3"></i> + 01 234 567 88</p>
-                <p>
-                    <i class="fas fa-print mr-3"></i> + 01 234 567 89</p>
-
+            <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                <h6 class="text-uppercase">ADMINISTRACIÓN</h6>
+                <ul class="list-group" style="font-size: 13px">
+                    <li class="list-group-item border-0 d-flex align-items-center px-0" style="background-color: unset" data-wow-delay="0.5s">
+                        <i class="material-icons tpn-red mr-3">location_on</i>
+                        {!! $data->direccion_2 !!}
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center px-0" style="background-color: unset" data-wow-delay="0.5s">
+                        <i class="material-icons tpn-red mr-3">phone_in_talk</i>
+                        <div class="">
+                            <a href="tel:{!! $data->central_telefono_1 !!}">{!! $data->central_telefono_1 !!}</a>
+                            <br>
+                            <a href="tel:{!! $data->central_telefono_2 !!}">{!! $data->central_telefono_2 !!}</a>
+                        </div>
+                    </li>
+                    <li class="list-group-item border-0 d-flex align-items-center px-0" style="background-color: unset" data-wow-delay="0.5s">
+                        <i class="material-icons tpn-red mr-3">send</i>
+                        <a href="mailto:{!! $data->correo_2 !!}">{!! $data->correo_2 !!}</a>
+                    </li>
+                </ul>
             </div>
             <!-- Grid column -->
 
@@ -87,8 +84,8 @@
     <!-- Footer Links -->
 
     <!-- Copyright -->
-    <div class="footer-copyright">
-        <div class="container py-3 d-flex justify-content-end" style="border-top: 1px solid #FFFFFF; ">
+    <div class=" ">
+        <div class="container py-3 d-flex justify-content-end" style="border-top: 1px solid #888888; ">
             <a class="text-lighten-4" href="#!">BY OSOLE</a>
         </div>
     </div>

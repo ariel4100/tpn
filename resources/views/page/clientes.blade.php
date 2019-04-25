@@ -3,7 +3,7 @@
 @section('content')
     <div class="container my-5">
         <div class="row">
-            <div class="col-md-12 wow fadeInDown">
+            <div class="col-md-12 wow fadeInDown" style="font-family: 'Montserrat Light'">
                 {!! $cliente->text !!}
             </div>
         </div>

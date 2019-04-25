@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\Storage;
 class ContentController extends Controller
 {
     public function index($section, $type) {
-        if ($section == 'calidad' && $type == 'texto') {
+        if ($type == 'texto' && $section == 'calidad' || $section == 'contacto' || $section == 'logos') {
             $contenido = Content::seccionTipo($section, $type)->first();
             $data =  json_decode($contenido->text,true);
             return view('adm.content.index', compact('contenido', 'section','type','data'));
         }
-        if ($type == 'texto' && $section != 'calidad') {
+        if ($type == 'texto' && $section != 'calidad' && $section != 'contacto' && $section != 'logos') {
             $contenido = Content::seccionTipo($section, $type)->first();
             return view('adm.content.index', compact('contenido', 'section','type'));
         }
@@ -61,11 +61,31 @@ class ContentController extends Controller
     }
 
     public function update(Request $request, Content $contenido) {
-        if ($request->section == 'calidad' && $request->section == 'texto')
+        if ($request->section == 'calidad' || $request->section == 'contacto' || $request->section == 'logos' && $request->type == 'texto')
         {
+            $content = json_decode($contenido->text);
             $data = $request->all();
+            $data['image'] = isset($content->image) ? $content->image : null;
+            $data['image_2'] = isset($content->image_2) ? $content->image_2 : null;
+            $data['image_3'] = isset($content->image_3) ? $content->image_3 : null;
+            if($request->file('image'))
+            {
+                $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('image'));
+                $data['image'] = asset($path);
+            }
+            if($request->file('image_2'))
+            {
+                $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('image_2'));
+                $data['image_2'] = asset($path);
+            }
+            if($request->file('image_3'))
+            {
+                $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('image_3'));
+                $data['image_3'] = asset($path);
+            }
             $contenido->update(['text'=> json_encode($data)]);
         }else{
+
             $data = $request->all();
             if ($request->file('image'))
             {

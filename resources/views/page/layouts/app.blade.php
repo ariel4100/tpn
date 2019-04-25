@@ -16,10 +16,10 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700" rel="stylesheet">
     <style>
         .tpn-blue{
-            color: #175A9F;
+            color: #175A9F !important;
         }
         .tpn-red{
-            color: #E0333C;
+            color: #E0333C !important;
         }
         strong {
             font-weight: 700 !important;
@@ -35,11 +35,14 @@
             border-bottom: 2px solid #DE3641;
             color: #DE3641 !important;
         }
+        .navbar.navbar-light .breadcrumb .nav-item .nav-link, .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+            color: #595959;
+        }
     </style>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     @yield('style')
 </head>
-<body style="font-family: 'Montserrat'">
+<body style="font-family: 'Montserrat regular'; color: #595959;">
 <div id="app">
     @include('page.partials.header')
     <main class=" ">

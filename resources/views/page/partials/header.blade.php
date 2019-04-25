@@ -2,26 +2,23 @@
     <div class="row">
         <div class="container">
             <div class="d-flex justify-content-end"  >
+                <a href="http://tpn.setuponline.com.ar" target="_blank" class="p-2" style="color: #B0B0B0;">SEGUIMIENTO DE CARGA</a>
+                <a href="{{ route('presupuesto') }}" class="p-2 {{ request()->is('presupuesto') ? 'activo' : '' }}" style="color: #B0B0B0;">SOLICITUD DE PRESUPUESTO</a>
                 <div class="p-2 bd-highlight">
-                    <a href="">SEGUIMIENTO DE CARGA</a>
-                </div>
-                <div class="p-2 bd-highlight">
-                    <a href="{{ route('presupuesto') }}" {{ request()->is('presupuesto') ? 'active' : '' }}>SOLICITUD DE PRESUPUESTO</a>
-                </div>
-                <div class="p-2 bd-highlight">
-                    <a href=""><i class="fas fa-search"></i></a>
-                    <a href=""><i class="fab fa-facebook"></i></a>
-                    <a href=""><i class="fab fa-youtube"></i></a>
+                    <a href="" class="tpn-red"><i class="fas fa-search"></i></a>
+                    <a href="" class="tpn-blue mx-2"><i class="fab fa-facebook"></i></a>
+                    <a href="" class="tpn-blue"><i class="fab fa-youtube"></i></a>
                 </div>
 
             </div>
         </div>
     </div>
 </div>
-
-<nav class="navbar navbar-expand-lg navbar-light bg-white" style="box-shadow: unset; ">
+@php($logos = \App\Content::seccionTipo('logos','texto')->first())
+@php($data = json_decode($logos->text))
+<nav class="navbar navbar-expand-lg navbar-light bg-white py-0" style="box-shadow: unset; ">
 <div class="container">
-    <a class="navbar-brand" href="{{ route('home') }}">Navbar</a>
+    <a class="navbar-brand" href="{{ route('home') }}"><img src="{!! $data->image !!}" alt="" class="img-fluid"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
             aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -33,9 +30,9 @@
             <li class="nav-item"><a class="nav-link {{ request()->is('flota') ? 'activo' : '' }}" href="{{ route('flota') }}">Flota</a></li>
             <li class="nav-item"><a class="nav-link {{ request()->is('clientes') ? 'activo' : '' }}" href="{{ route('clientes') }}">Clientes</a></li>
             <li class="nav-item"><a class="nav-link {{ request()->is('politica-de-calidad') ? 'activo' : '' }}" href="{{ route('calidad') }}">Política de Calidad</a></li>
-            <li class="nav-item"><a class="nav-link {{ request()->is('solidaria') ? 'activo' : '' }}" href="{{ route('solidaria') }}">TPN solidaria</a></li>
+            <li class="nav-item"><a class="nav-link {{ request()->is('solidaria*') ? 'activo' : '' }}" href="{{ route('solidaria') }}">TPN solidaria</a></li>
             <li class="nav-item"><a class="nav-link {{ request()->is('contacto') ? 'activo' : '' }}" href="{{ route('contacto') }}">Contacto</a></li>
-            <a href="{{ route('pedido') }}" class="btn btn-outline-black btn-md my-2 my-sm-0">PEDIDO DE RETIRO</a>
+            <a href="{{ route('pedido') }}" class="btn btn-md my-2 my-sm-0 {{ request()->is('pedido') ? 'btn-outline-danger' : 'btn-outline-dark' }}">PEDIDO DE RETIRO</a>
 
         </ul>
     </div>

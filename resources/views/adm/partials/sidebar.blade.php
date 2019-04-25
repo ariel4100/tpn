@@ -125,18 +125,53 @@
                 <i class="material-icons">contact_mail</i>Contacto<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="contacto">
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'contacto', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Datos de Contacto</a></li>
             </ul>
         </li>
+        <hr>
         <!---PEDIDO DE RETIRO---->
         <li class="">
             <a href="#pedido" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="material-icons"></i>Pedido de Retiro<i class="fas fa-sort-down ml-auto"></i>
+                <i class="material-icons">archive</i>Pedido de Retiro<i class="fas fa-sort-down ml-auto"></i>
             </a>
             <ul class="collapse list-group list-group-flush " id="pedido">
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
+                <li><a href="{{ route('pedidos.index') }}"><i class="fas fa-chevron-right px-4"></i>Ver Pedidos</a></li>
+            </ul>
+        </li>
+        <!---LOGOS---->
+        <li class="">
+            <a href="#Logos" data-toggle="collapse" aria-expanded="false" class="d-flex">
+                <i class="material-icons">wallpaper</i>Logos<i class="fas fa-sort-down ml-auto"></i>
+            </a>
+            <ul class="collapse list-group list-group-flush " id="Logos">
+                <li><a href="{{ route('contenido.index', ['seccion' => 'logos', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Editar Logos</a></li>
+            </ul>
+        </li>
+        <!---REDES SOCIALES---->
+        <li class="">
+            <a href="#Redes" data-toggle="collapse" aria-expanded="false" class="d-flex">
+                <i class="material-icons">thumb_up</i>Redes Sociales<i class="fas fa-sort-down ml-auto"></i>
+            </a>
+            <ul class="collapse list-group list-group-flush " id="Redes">
+                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Editar Redes Sociales</a></li>
+            </ul>
+        </li>
+        <!---METADATOS---->
+        <li class="">
+            <a href="#Metadatos" data-toggle="collapse" aria-expanded="false" class="d-flex">
+                <i class="material-icons">data_usage</i>Metadatos<i class="fas fa-sort-down ml-auto"></i>
+            </a>
+            <ul class="collapse list-group list-group-flush " id="Metadatos">
+                <li><a href="{{ route('metadatos.index') }}"><i class="fas fa-chevron-right px-4"></i>Editar Metadatos</a></li>
+            </ul>
+        </li>
+        <!---USUARIOS---->
+        <li class="">
+            <a href="#Usuario" data-toggle="collapse" aria-expanded="false" class="d-flex">
+                <i class="material-icons">account_circle</i>Usuario<i class="fas fa-sort-down ml-auto"></i>
+            </a>
+            <ul class="collapse list-group list-group-flush " id="Usuario">
+                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Editar Usuario</a></li>
             </ul>
         </li>
     </ul>

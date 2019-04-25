@@ -59,10 +59,17 @@ Route::prefix('adm')->group(function (){
         Route::put('{contenido}/update', ['uses' => 'adm\GaleryController@update', 'as' => '.update']);
         Route::get('{id}/destroy', ['uses' => 'adm\GaleryController@destroy', 'as' => '.destroy']);
     });
+    Route::group(['prefix' => 'pedidos', 'as' => 'pedidos'], function() {
+        Route::get('pedidos', ['uses' => 'adm\OrderController@index', 'as' => '.index']);
+
+    });
 
 
     Route::resource('categoria','adm\CategoryController');
     Route::resource('novedad','adm\NewsController');
+    Route::resource('metadatos','adm\MetadataController');
+    Route::get('meta/{id}','adm\MetadataController@eliminar')->name('metadato.eliminar');
+    Route::resource('usuario','adm\UserController');
 });
 //Route::get('/home', 'HomeController@index')->name('home');
 Route::post('/upload','HomeController@index');

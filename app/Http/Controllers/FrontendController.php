@@ -68,7 +68,9 @@ class FrontendController extends Controller
 
     public function contacto()
     {
-        return view('page.contacto');
+        $contacto = Content::seccionTipo('contacto','texto')->first();
+        $data = json_decode($contacto->text);
+        return view('page.contacto',compact('data'));
     }
 
     public function solidaria()

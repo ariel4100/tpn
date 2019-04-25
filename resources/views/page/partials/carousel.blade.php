@@ -16,7 +16,7 @@
                 </div>
                 <div class="carousel-caption d-none d-md-block wow fadeInLeft" style="right: 0px; left: 0px; text-align: left; top: 30%">
                     <div class="container" >
-                        <h3 class="h3-responsive">{!! $s->title !!}</h3>
+                        <h5 class="">{!! $s->title !!}</h5>
                         <p>{!! $s->subtitle !!}</p>
                     </div>
                 </div>

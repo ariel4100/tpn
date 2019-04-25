@@ -1,5 +1,11 @@
 @extends('page.layouts.app')
-
+@section('style')
+    <style>
+        p{
+            font-family: 'Montserrat Light'
+        }
+    </style>
+@stop
 @section('content')
 <div class="container my-5">
     @forelse($servicios as $k=>$s)
