@@ -74,7 +74,6 @@
             </a>
             <ul class="collapse list-group list-group-flush " id="servicios">
                 <li><a href="{{ route('contenido.index', ['seccion' => 'servicios', 'tipo' => 'imagen']) }}"><i class="fas fa-chevron-right px-4"></i>Contenido</a></li>
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Slider</a></li>
             </ul>
         </li>
         <!---FLOTA---->
@@ -128,7 +127,6 @@
                 <li><a href="{{ route('contenido.index', ['seccion' => 'contacto', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Datos de Contacto</a></li>
             </ul>
         </li>
-        <hr>
         <!---PEDIDO DE RETIRO---->
         <li class="">
             <a href="#pedido" data-toggle="collapse" aria-expanded="false" class="d-flex">
@@ -138,7 +136,21 @@
                 <li><a href="{{ route('pedidos.index') }}"><i class="fas fa-chevron-right px-4"></i>Ver Pedidos</a></li>
             </ul>
         </li>
-        <!---LOGOS---->
+        <hr>
+        <!---TPN---->
+        <li class="">
+            <a href="#Logos" data-toggle="collapse" aria-expanded="false" class="d-flex">
+                TPN<i class="fas fa-sort-down ml-auto"></i>
+            </a>
+            <ul class="collapse list-group list-group-flush " id="Logos">
+                <li><a href="{{ route('contenido.index', ['seccion' => 'logos', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Editar Logos</a></li>
+                <li><a href="{{ route('metadatos.index') }}"><i class="fas fa-chevron-right px-4"></i>Editar Metadatos</a></li>
+                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Editar Redes Sociales</a></li>
+                <li><a href="{{ route('usuario.index') }}"><i class="fas fa-chevron-right px-4"></i>Editar Usuario</a></li>
+            </ul>
+        </li>
+
+        <!---LOGOS
         <li class="">
             <a href="#Logos" data-toggle="collapse" aria-expanded="false" class="d-flex">
                 <i class="material-icons">wallpaper</i>Logos<i class="fas fa-sort-down ml-auto"></i>
@@ -146,8 +158,8 @@
             <ul class="collapse list-group list-group-flush " id="Logos">
                 <li><a href="{{ route('contenido.index', ['seccion' => 'logos', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Editar Logos</a></li>
             </ul>
-        </li>
-        <!---REDES SOCIALES---->
+        </li>---->
+        <!---REDES SOCIALES
         <li class="">
             <a href="#Redes" data-toggle="collapse" aria-expanded="false" class="d-flex">
                 <i class="material-icons">thumb_up</i>Redes Sociales<i class="fas fa-sort-down ml-auto"></i>
@@ -155,8 +167,8 @@
             <ul class="collapse list-group list-group-flush " id="Redes">
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Editar Redes Sociales</a></li>
             </ul>
-        </li>
-        <!---METADATOS---->
+        </li>---->
+        <!---METADATOS
         <li class="">
             <a href="#Metadatos" data-toggle="collapse" aria-expanded="false" class="d-flex">
                 <i class="material-icons">data_usage</i>Metadatos<i class="fas fa-sort-down ml-auto"></i>
@@ -164,8 +176,8 @@
             <ul class="collapse list-group list-group-flush " id="Metadatos">
                 <li><a href="{{ route('metadatos.index') }}"><i class="fas fa-chevron-right px-4"></i>Editar Metadatos</a></li>
             </ul>
-        </li>
-        <!---USUARIOS---->
+        </li>---->
+        <!---USUARIOS
         <li class="">
             <a href="#Usuario" data-toggle="collapse" aria-expanded="false" class="d-flex">
                 <i class="material-icons">account_circle</i>Usuario<i class="fas fa-sort-down ml-auto"></i>
@@ -173,7 +185,7 @@
             <ul class="collapse list-group list-group-flush " id="Usuario">
                 <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Editar Usuario</a></li>
             </ul>
-        </li>
+        </li>---->
     </ul>
 </nav>
 

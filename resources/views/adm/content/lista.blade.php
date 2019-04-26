@@ -22,7 +22,7 @@
                 <td>{!! $c->order !!}</td>
                 <td>
                     <a class="btn btn-sm btn-warning" href="{{ route('contenido.edit', [$section, $c->id]) }}"><i class="fas fa-pen"></i></a>
-                    <a class="btn btn-sm btn-danger" onclick="return confirm('¿Realmente desea eliminar este registro?')" href=" "><i class="fas fa-trash-alt"></i></a>
+                    <a class="btn btn-sm btn-danger" onclick="return confirm('¿Realmente desea eliminar este registro?')" href="{{ route('contenido.delete', [$section, $c->id]) }}"><i class="fas fa-trash-alt"></i></a>
                 </td>
             </tr>
             @empty

@@ -61,7 +61,7 @@ class ContentController extends Controller
     }
 
     public function update(Request $request, Content $contenido) {
-        if ($request->section == 'calidad' || $request->section == 'contacto' || $request->section == 'logos' && $request->type == 'texto')
+        if ( $request->type == 'texto' && $request->section == 'calidad' || $request->section == 'contacto' || $request->section == 'logos' )
         {
             $content = json_decode($contenido->text);
             $data = $request->all();
@@ -95,7 +95,7 @@ class ContentController extends Controller
 
             isset($data['destacado']) ? $data['destacado'] = true : $data['destacado'] = false;
 
-            if ($request->type == 'ficha') {
+            if ($request->file('ficha')) {
                 $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('ficha'));
                 $data['ficha'] = asset($path);
             }
@@ -106,7 +106,12 @@ class ContentController extends Controller
 
     }
 
+    public function delete($section, Content $contenido)
+    {
+        $contenido->delete();
 
+        return back()->with('status', 'Eliminado correctamente');
+    }
 
 
 

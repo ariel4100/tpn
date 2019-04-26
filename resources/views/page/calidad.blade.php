@@ -22,11 +22,12 @@
                         <div class="col-md-10 d-flex align-items-center">
                             <div class="">
                                 <span class="tpn-blue font-weight-bold"> {!! $d->title !!}</span>
-                                <br><span style="font-family: 'Montserrat Light'">Ver Certificado</span>
+                                <br>
+                                <a href="{{ $d->ficha }}" target="_blank"><span style="font-family: 'Montserrat Light'; color: #464646">Ver Certificado</span></a>
                             </div>
                         </div>
                         <div class="col-md-2 d-flex align-items-center">
-                            <i class="material-icons tpn-blue" style="font-size: 3rem;">file_download</i>
+                            <a href="{{ isset($d->ficha) ? $d->ficha : null }}" {{ isset($d->ficha) ? 'download' : null }}><i class="material-icons tpn-blue" style="font-size: 3rem;">file_download</i></a>
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\adm;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -37,8 +38,16 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        return $request;
-        return back();
+        $request->validate([
+            'username' => ['required', 'string','unique:users', 'max:255'],
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
+        ]);
+        $user = User::create($request->all());
+        $user->fill(['password' => Hash::make($request->password)]);
+        $user->save();
+
+        return back()->with('status', 'Creado correctamente');
     }
 
     /**
@@ -73,8 +82,17 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
+
+        $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+
+            'password' => ['required', 'string', 'min:4', 'confirmed'],
+        ]);
         $user = User::find($id);
-        return back();
+        $user->fill($request->all());
+        $user->fill(['password' => Hash::make($request->password)]);
+        $user->save();
+        return back()->with('status', 'Actualizado correctamente');
     }
 
     /**
@@ -83,9 +101,9 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete($id)
     {
         User::find($id)->delete();
-        return back();
+        return back()->with('status', 'Eliminado correctamente');
     }
 }

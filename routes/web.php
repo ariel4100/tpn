@@ -26,11 +26,13 @@ Route::get('solidaria/{news}','FrontendController@solidaria_blog')->name('solida
 Route::get('contacto','FrontendController@contacto')->name('contacto');
 Route::get('pedido','FrontendController@pedido')->name('pedido');
 Route::get('presupuesto','FrontendController@presupuesto')->name('presupuesto');
-
-
 Auth::routes();
+/*Route::get('/download/{file}', function($file) {
+    return response()->download($file);
+})->name('downloadFile');*/
 
-Route::prefix('adm')->group(function (){
+
+Route::group(['middleware' => 'auth', 'prefix' => 'adm'],function (){
     Route::view('/',  'adm.home.index');
 
     Route::group(['prefix' => 'slider', 'as' => 'slider'], function() {
@@ -48,7 +50,7 @@ Route::prefix('adm')->group(function (){
         Route::post('/store', ['uses' => 'adm\ContentController@store', 'as' => '.store']);
         Route::get('{section}/{contenido}/edit', ['uses' => 'adm\ContentController@edit', 'as' => '.edit']);
         Route::put('{contenido}/update', ['uses' => 'adm\ContentController@update', 'as' => '.update']);
-        Route::delete('{contenido}/destroy', ['uses' => 'adm\ContentController@destroy', 'as' => '.destroy']);
+        Route::get('/eliminar/lista/{section}/{contenido}', ['uses' => 'adm\ContentController@delete', 'as' => '.delete']);
     });
     // GALERIAS DE NEWS
     Route::group(['prefix' => 'galeria', 'as' => 'galeria'], function() {
@@ -70,6 +72,8 @@ Route::prefix('adm')->group(function (){
     Route::resource('metadatos','adm\MetadataController');
     Route::get('meta/{id}','adm\MetadataController@eliminar')->name('metadato.eliminar');
     Route::resource('usuario','adm\UserController');
+    Route::get('usuario/destroy/{id}','adm\UserController@delete')->name('usuario.delete');
+
 });
 //Route::get('/home', 'HomeController@index')->name('home');
-Route::post('/upload','HomeController@index');
+/*Route::post('/upload','HomeController@index');*/

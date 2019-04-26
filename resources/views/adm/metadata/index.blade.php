@@ -22,7 +22,7 @@
                             <td>{{ $item->descripcion }}</td>
                             <td>
                                 <a class="btn btn-sm btn-warning" href="{{ route('metadatos.edit', $item->id) }}"><i class="fas fa-pen"></i></a>
-                                <a class="btn btn-sm btn-danger" onclick="return confirm('¿Realmente desea eliminar este registro?')" href="{{ route('metadato.eliminar',$item->id) }}"><i class="fas fa-trash-alt"></i></a>
+                                <!--<a class="btn btn-sm btn-danger" onclick="return confirm('¿Realmente desea eliminar este registro?')" href="{{ route('metadato.eliminar',$item->id) }}"><i class="fas fa-trash-alt"></i></a>-->
                             </td>
                         </tr>
                     @empty

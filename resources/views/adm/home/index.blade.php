@@ -1,12 +1,7 @@
 @extends('adm.layouts.app')
 
 @section('content')
-<div class="container">
-    <a href="" class="btn">Añadir</a>
-    <div class="row">
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-        <div class="col-md-4"></div>
-    </div>
+<div class="container h-100 d-flex justify-content-center align-items-center">
+<h1 class="my-5 animated  zoomIn">Bienvenido</h1>
 </div>
 @endsection
