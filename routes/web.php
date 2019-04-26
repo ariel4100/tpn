@@ -45,34 +45,34 @@ Route::group(['middleware' => 'auth', 'prefix' => 'adm'],function (){
     });
 
     Route::group(['prefix' => 'contenido', 'as' => 'contenido'], function() {
-        Route::get('{section}/{tipo}', ['uses' => 'adm\ContentController@index', 'as' => '.index']);
-        Route::get('{section}/{tipo}/create', ['uses' => 'adm\ContentController@create', 'as' => '.create']);
-        Route::post('/store', ['uses' => 'adm\ContentController@store', 'as' => '.store']);
-        Route::get('{section}/{contenido}/edit', ['uses' => 'adm\ContentController@edit', 'as' => '.edit']);
-        Route::put('{contenido}/update', ['uses' => 'adm\ContentController@update', 'as' => '.update']);
-        Route::get('/eliminar/lista/{section}/{contenido}', ['uses' => 'adm\ContentController@delete', 'as' => '.delete']);
+        Route::get('{section}/{tipo}', ['uses' => 'Adm\ContentController@index', 'as' => '.index']);
+        Route::get('{section}/{tipo}/create', ['uses' => 'Adm\ContentController@create', 'as' => '.create']);
+        Route::post('/store', ['uses' => 'Adm\ContentController@store', 'as' => '.store']);
+        Route::get('{section}/{contenido}/edit', ['uses' => 'Adm\ContentController@edit', 'as' => '.edit']);
+        Route::put('{contenido}/update', ['uses' => 'Adm\ContentController@update', 'as' => '.update']);
+        Route::get('/eliminar/lista/{section}/{contenido}', ['uses' => 'Adm\ContentController@delete', 'as' => '.delete']);
     });
     // GALERIAS DE NEWS
     Route::group(['prefix' => 'galeria', 'as' => 'galeria'], function() {
-        Route::get('{id}', ['uses' => 'adm\GaleryController@index', 'as' => '.index']);
-        Route::get('crear/galeria/{id}', ['uses' => 'adm\GaleryController@create', 'as' => '.create']);
-        Route::post('/store', ['uses' => 'adm\GaleryController@store', 'as' => '.store']);
-        Route::get('{id}/edit', ['uses' => 'adm\GaleryController@edit', 'as' => '.edit']);
-        Route::put('{contenido}/update', ['uses' => 'adm\GaleryController@update', 'as' => '.update']);
-        Route::get('{id}/destroy', ['uses' => 'adm\GaleryController@destroy', 'as' => '.destroy']);
+        Route::get('{id}', ['uses' => 'Adm\GaleryController@index', 'as' => '.index']);
+        Route::get('crear/galeria/{id}', ['uses' => 'Adm\GaleryController@create', 'as' => '.create']);
+        Route::post('/store', ['uses' => 'Adm\GaleryController@store', 'as' => '.store']);
+        Route::get('{id}/edit', ['uses' => 'Adm\GaleryController@edit', 'as' => '.edit']);
+        Route::put('{contenido}/update', ['uses' => 'Adm\GaleryController@update', 'as' => '.update']);
+        Route::get('{id}/destroy', ['uses' => 'Adm\GaleryController@destroy', 'as' => '.destroy']);
     });
     Route::group(['prefix' => 'pedidos', 'as' => 'pedidos'], function() {
-        Route::get('pedidos', ['uses' => 'adm\OrderController@index', 'as' => '.index']);
+        Route::get('pedidos', ['uses' => 'Adm\OrderController@index', 'as' => '.index']);
 
     });
 
 
-    Route::resource('categoria','adm\CategoryController');
-    Route::resource('novedad','adm\NewsController');
-    Route::resource('metadatos','adm\MetadataController');
-    Route::get('meta/{id}','adm\MetadataController@eliminar')->name('metadato.eliminar');
-    Route::resource('usuario','adm\UserController');
-    Route::get('usuario/destroy/{id}','adm\UserController@delete')->name('usuario.delete');
+    Route::resource('categoria','Adm\CategoryController');
+    Route::resource('novedad','Adm\NewsController');
+    Route::resource('metadatos','Adm\MetadataController');
+    Route::get('meta/{id}','Adm\MetadataController@eliminar')->name('metadato.eliminar');
+    Route::resource('usuario','Adm\UserController');
+    Route::get('usuario/destroy/{id}','Adm\UserController@delete')->name('usuario.delete');
 
 });
 //Route::get('/home', 'HomeController@index')->name('home');

@@ -12,12 +12,12 @@ use Illuminate\Support\Facades\Storage;
 class ContentController extends Controller
 {
     public function index($section, $type) {
-        if ($type == 'texto' && $section == 'calidad' || $section == 'contacto' || $section == 'logos') {
+        if ($type == 'texto' && $section == 'calidad' || $section == 'contacto' || $section == 'logos' || $section == 'redes') {
             $contenido = Content::seccionTipo($section, $type)->first();
             $data =  json_decode($contenido->text,true);
             return view('adm.content.index', compact('contenido', 'section','type','data'));
         }
-        if ($type == 'texto' && $section != 'calidad' && $section != 'contacto' && $section != 'logos') {
+        if ($type == 'texto' && $section != 'calidad' && $section != 'contacto' && $section != 'logos' && $section != 'redes') {
             $contenido = Content::seccionTipo($section, $type)->first();
             return view('adm.content.index', compact('contenido', 'section','type'));
         }
@@ -61,7 +61,7 @@ class ContentController extends Controller
     }
 
     public function update(Request $request, Content $contenido) {
-        if ( $request->type == 'texto' && $request->section == 'calidad' || $request->section == 'contacto' || $request->section == 'logos' )
+        if ( $request->type == 'texto' && $request->section == 'calidad' || $request->section == 'contacto' || $request->section == 'logos' || $request->section == 'redes')
         {
             $content = json_decode($contenido->text);
             $data = $request->all();

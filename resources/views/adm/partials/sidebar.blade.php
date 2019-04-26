@@ -145,7 +145,7 @@
             <ul class="collapse list-group list-group-flush " id="Logos">
                 <li><a href="{{ route('contenido.index', ['seccion' => 'logos', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Editar Logos</a></li>
                 <li><a href="{{ route('metadatos.index') }}"><i class="fas fa-chevron-right px-4"></i>Editar Metadatos</a></li>
-                <li><a href=" "><i class="fas fa-chevron-right px-4"></i>Editar Redes Sociales</a></li>
+                <li><a href="{{ route('contenido.index', ['seccion' => 'redes', 'tipo' => 'texto']) }}"><i class="fas fa-chevron-right px-4"></i>Editar Redes Sociales</a></li>
                 <li><a href="{{ route('usuario.index') }}"><i class="fas fa-chevron-right px-4"></i>Editar Usuario</a></li>
             </ul>
         </li>
