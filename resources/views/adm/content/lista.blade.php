@@ -16,7 +16,7 @@
             <tbody>
             @forelse($contenido as $c)
             <tr>
-                <th style="width: 150px"><img src="{!! $c->image !!}" class="img-fluid" alt=""></th>
+                <th style="width: 150px"><img src="{!! asset($c->image) !!}" class="img-fluid" alt=""></th>
                 <td>{!! $c->title !!}</td>
                 <td>{!! str_limit($c->text,150) !!}</td>
                 <td>{!! $c->order !!}</td>

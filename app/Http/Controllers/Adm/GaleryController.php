@@ -31,7 +31,7 @@ class GaleryController extends Controller
         if ($request->file('image'))
         {
             $path = Storage::disk('public')->put('uploads/solidaria/'.strtolower($novedades->Category->title).'',$request->file('image'));
-            $galery->fill(['image' => asset($path)])->save();
+            $galery->fill(['image' => $path])->save();
         }
         return redirect()->route('galeria.index',$request->new_id)->with('status','Creado correctamente');
     }
@@ -51,7 +51,7 @@ class GaleryController extends Controller
         if ($request->file('image'))
         {
             $path = Storage::disk('public')->put('uploads/solidaria/'.strtolower($novedades->Category->title).'',$request->file('image'));
-            $galery->fill(['image' => asset($path)])->save();
+            $galery->fill(['image' => $path])->save();
         }
         return redirect()->route('galeria.index',$request->new_id)->with('status','Creado correctamente');
     }

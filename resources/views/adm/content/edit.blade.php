@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class="col-md-12 text-center my-5">
-                        <img src="{{ $contenido->image }}" alt="" class="img-fluid">
+                        <img src="{{ asset($contenido->image) }}" alt="" class="img-fluid">
                     </div>
                 @else
                     <div class="col-md-12">

@@ -17,7 +17,7 @@
                     <tbody>
                     @forelse ($slider as $item)
                         <tr>
-                            <td><img src="{{  $item->image }}" style="width: 150px"></td>
+                            <td><img src="{{  asset($item->image) }}" style="width: 150px"></td>
                             <td>{{ $item->title }}</td>
                             <td>{{ $item->order }}</td>
                             <td>

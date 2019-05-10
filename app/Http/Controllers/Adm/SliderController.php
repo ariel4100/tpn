@@ -27,7 +27,7 @@ class SliderController extends Controller
         if ($request->file('image'))
         {
             $path = Storage::disk('public')->put('uploads/sliders',$request->file('image'));//$request->file('image')->store('public/sliders');
-            $slider->fill(['image' => asset($path)])->save();
+            $slider->fill(['image' => $path])->save();
         }
 
         return redirect()->route('slider.list', ['seccion' => $slider->section])->with('status', 'Slider creado correctamente');
@@ -51,7 +51,7 @@ class SliderController extends Controller
         if ($request->file('image'))
         {
             $path = Storage::disk('public')->put('uploads/sliders',$request->file('image'));
-            $slider->fill(['image' => asset($path)])->save();
+            $slider->fill(['image' => $path])->save();
         }
 
         return redirect()->route('slider.list', ['seccion' => $slider->section])->with('status', 'Slider actualizado correctamente');

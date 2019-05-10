@@ -9,7 +9,7 @@
             {!! $empresa->text !!}
         </div>
         <div class="col-md-4 wow fadeInRight">
-            <img src="{!! $empresa->image !!}" class="img-fluid" alt="">
+            <img src="{!! asset($empresa->image) !!}" class="img-fluid" alt="">
         </div>
     </div>
 </div>
@@ -26,7 +26,7 @@
         <div class="row">
             @forelse($equipamientos as $k=>$e)
             <div class="col-md-3 wow fadeInUp" data-wow-delay="0.{{ $k*2 }}s">
-                <img src="{!! $e->image !!}" alt="" class="img-fluid my-4" >
+                <img src="{!! asset($e->image) !!}" alt="" class="img-fluid my-4" >
                 {!! $e->text !!}
             </div>
             @empty

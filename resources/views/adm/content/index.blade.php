@@ -21,7 +21,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 my-5 text-center">
-                    <img src="{{ $contenido->image }}" alt="" class="img-fluid">
+                    <img src="{{ asset($contenido->image) }}" alt="" class="img-fluid">
                 </div>
             @endif
             @if($section == 'empresa')
@@ -52,7 +52,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 my-5 text-center">
-                    <img src="{{ $contenido->image }}" alt="" class="img-fluid" style="height: 200px">
+                    <img src="{{ asset($contenido->image) }}" alt="" class="img-fluid" style="height: 200px">
                 </div>
                 <div class="col-md-6">
                     <div class="md-form">
@@ -113,14 +113,14 @@
                         <input type="file" class="custom-file-input" id="customFileLang" name="image" lang="es">
                         <label class="custom-file-label" for="customFileLang">Seleccionar Imagen</label>
                     </div>
-                    <img src="{!!  isset($data['image']) ? $data['image']: null !!}" alt="" class="img-fluid">
+                    <img src="{!!  isset($data['image']) ? asset($data['image']): null !!}" alt="" class="img-fluid">
                 </div>
                 <div class="col-md-6">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFileLang" name="image_2" lang="es">
                         <label class="custom-file-label" for="customFileLang">Seleccionar Imagen</label>
                     </div>
-                    <img src="{!!  isset($data['image_2']) ? $data['image_2']: null !!}" alt="" class="img-fluid" >
+                    <img src="{!!  isset($data['image_2']) ? asset($data['image_2']): null !!}" alt="" class="img-fluid" >
                 </div>
             @endif
             @if($section == 'logos')
@@ -130,21 +130,21 @@
                             <input type="file" class="custom-file-input" id="Favicon" name="image" lang="es">
                             <label class="custom-file-label" for="Favicon">Seleccionar Logo Favicon</label>
                         </div>
-                        <img src="{!! isset($data['image']) ? $data['image'] : null !!}" alt="" class="img-fluid my-4">
+                        <img src="{!! isset($data['image']) ? asset($data['image']) : null !!}" alt="" class="img-fluid my-4">
                     </div>
                     <div class="col-md-12">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="Header" name="image_2" lang="es">
                             <label class="custom-file-label" for="Header">Seleccionar Logo Header</label>
                         </div>
-                        <img src="{!! isset($data['image_2']) ? $data['image_2'] : null !!}" alt="" class="img-fluid my-4">
+                        <img src="{!! isset($data['image_2']) ? asset($data['image_2']) : null !!}" alt="" class="img-fluid my-4">
                     </div>
                     <div class="col-md-12">
                         <div class="custom-file">
                             <input type="file" class="custom-file-input" id="Footer" name="image_3" lang="es">
                             <label class="custom-file-label" for="Footer">Seleccionar Logo Footer</label>
                         </div>
-                        <img src="{!! isset($data['image_3']) ? $data['image_3'] : null !!}" alt="" class="img-fluid my-4">
+                        <img src="{!! isset($data['image_3']) ? asset($data['image_3']) : null !!}" alt="" class="img-fluid my-4">
                     </div>
                 </div>
             @endif

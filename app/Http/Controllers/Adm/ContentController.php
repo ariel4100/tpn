@@ -28,7 +28,6 @@ class ContentController extends Controller
     }
 
     public function create($section, $type) {
-
         if ($type == 'imagen' || $type == 'descarga' ) {
             return view('adm.content.create', compact('section','type'));
         }
@@ -40,11 +39,11 @@ class ContentController extends Controller
         if ($request->file('image'))
         {
             $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('image'));
-            $contenido->fill(['image' => asset($path)])->save();
+            $contenido->fill(['image' => $path])->save();
         }
         if ($request->file('ficha')) {
             $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('ficha'));
-            $contenido->fill(['ficha' => asset($path)])->save();
+            $contenido->fill(['ficha' => $path])->save();
         }
         if ($request->destacado)
         {
@@ -71,17 +70,17 @@ class ContentController extends Controller
             if($request->file('image'))
             {
                 $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('image'));
-                $data['image'] = asset($path);
+                $data['image'] = $path;
             }
             if($request->file('image_2'))
             {
                 $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('image_2'));
-                $data['image_2'] = asset($path);
+                $data['image_2'] = $path;
             }
             if($request->file('image_3'))
             {
                 $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('image_3'));
-                $data['image_3'] = asset($path);
+                $data['image_3'] = $path;
             }
             $contenido->update(['text'=> json_encode($data)]);
         }else{
@@ -90,14 +89,14 @@ class ContentController extends Controller
             if ($request->file('image'))
             {
                 $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('image'));
-                $data['image'] = asset($path);
+                $data['image'] = $path;
             }
 
             isset($data['destacado']) ? $data['destacado'] = true : $data['destacado'] = false;
 
             if ($request->file('ficha')) {
                 $path = Storage::disk('public')->put("uploads/$request->section/$request->type",$request->file('ficha'));
-                $data['ficha'] = asset($path);
+                $data['ficha'] = $path;
             }
 
             $contenido->update($data);
