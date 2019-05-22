@@ -8,9 +8,9 @@
             @forelse($flotas as $k=>$f)
                 <div class="row mb-4 wow fadeInUp" data-wow-delay="0.{{ $k*2 }}s">
                     <div class="col-md-2 text-right">
-                        <img src="{!! $f->image !!}" alt="" class="img-fluid">
+                        <img src="{!! asset($f->image) !!}" alt="" class="img-fluid">
                     </div>
-                    <div class="col-md-10" style="font-family: 'Montserrat Light'">
+                    <div class="col-md-10" style="/*font-family: 'Montserrat Light'*/">
                         {!! $f->text !!}
                     </div>
                 </div>

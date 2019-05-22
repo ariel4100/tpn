@@ -4,7 +4,7 @@
 <div class="container my-5">
     <h4 class="tpn-blue font-weight-bold my-4">{!! $data->title !!}</h4>
     <div class="row">
-        <div class="col-md-6 wow fadeInUp" style="font-family: Montserrat Light;">
+        <div class="col-md-6 wow fadeInUp" style="/*font-family: Montserrat Light;*/">
             {!! $data->text !!}
         </div>
         <div class="col-md-6 wow fadeInUp">
@@ -37,11 +37,11 @@
     </div>
     <h4 class="tpn-blue font-weight-bold wow fadeInUp my-4">{!! $data->title_2 !!}</h4>
     <div class="row">
-        <div class="col-md-6 wow fadeInUp" style="font-family: Montserrat Light;">
+        <div class="col-md-6 wow fadeInUp" style="/*font-family: Montserrat Light;*/">
             {!! $data->text_2 !!}
         </div>
         <div class="col-md-6 wow fadeInUp">
-            <p style="font-family: Montserrat Light;">{!! $data->subtitle_2 !!}</p>
+            <p style="/*font-family: Montserrat Light;*/">{!! $data->subtitle_2 !!}</p>
             @foreach($imagen as $k=>$i)
                 <img src="{!! $i->image !!}" alt="" class="img-fluid">
                 <p class="py-2"><b>{!! $i->title !!}</b></p>

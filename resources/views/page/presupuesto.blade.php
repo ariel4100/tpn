@@ -63,16 +63,12 @@
                 </div>
             </div>-->
             <div class="row wow fadeIn" id="segundo" style="display: none">
-                <div class="md-form col-md-3">
-                    <input type="text" id="bulto" class="form-control" placeholder="Dimensiones del bulto 1">
-                    <label for="bulto" class="pl-3">BULTOS</label>
-                    <a href="" class="btn btn-outline-danger">añadir bulto</a>
-                </div>
-                <div class="md-form col-md-3">
-                    <input type="text" class="form-control" placeholder="Peso del bulto 1">
-                </div>
+                <presupuesto></presupuesto>
                 <div class="md-form col-md-6">
-                    <input type="text" class="form-control" placeholder="Examinar adjunto">
+                    <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="customFileLangHTML">
+                        <label class="custom-file-label" for="customFileLangHTML" data-browse="...">Examinar Adjunto</label>
+                    </div>
                 </div>
                 <div class="md-form col-md-6">
                     <input type="text" class="form-control" placeholder="Origen">
@@ -81,8 +77,11 @@
                     <input type="text" class="form-control" placeholder="Destino">
                 </div>
                 <div class="md-form col-md-6">
-                    <select name="" id="" class="form-control">
+                    <select name="" id="" class="custom-select md-form">
                         <option value="" disabled selected>Tipo de Servicio</option>
+                        <option value="">Carga General</option>
+                        <option value="">Carga Especial</option>
+                        <option value="">Carga Peligrosa</option>
                     </select>
                 </div>
                 <div class="col-md-6">

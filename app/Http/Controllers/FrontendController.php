@@ -17,27 +17,27 @@ class FrontendController extends Controller
         $empresa = Content::seccionTipo('empresa','texto')->first();
         if ($empresa->destacado)
         {
-            $equipamientos = Content::seccionTipo('empresa','imagen')->get();
+            $equipamientos = Content::seccionTipo('empresa','imagen')->orderBy('order')->get();
         }else{
             $equipamientos = [];
         }
         $servicios = Content::seccionTipo('home','imagen')->get();
         $home = Content::seccionTipo('home','texto')->first();
-        $slider = Slider::where('section','home')->get();
+        $slider = Slider::where('section','home')->orderBy('order')->get();
         return view('page.home',compact('home','slider','equipamientos','empresa','servicios'));
     }
 
     public function empresa()
     {
         $empresa = Content::seccionTipo('empresa','texto')->first();
-        $equipamientos = Content::seccionTipo('empresa','imagen')->get();
+        $equipamientos = Content::seccionTipo('empresa','imagen')->orderBy('order')->get();
         $slider = Slider::where('section','empresa')->get();
         return view('page.empresa',compact('empresa','slider','equipamientos'));
     }
 
     public function servicios()
     {
-        $servicios = Content::seccionTipo('servicios','imagen')->get();
+        $servicios = Content::seccionTipo('servicios','imagen')->orderBy('order')->get();
         return view('page.servicios',compact('servicios'));
     }
 
@@ -52,14 +52,14 @@ class FrontendController extends Controller
     public function clientes()
     {
         $cliente = Content::seccionTipo('clientes','texto')->first();
-        $clientes = Content::seccionTipo('clientes','imagen')->get();
+        $clientes = Content::seccionTipo('clientes','imagen')->orderBy('order')->get();
         return view('page.clientes',compact('cliente','clientes'));
     }
 
     public function calidad()
     {
-        $imagen = Content::seccionTipo('calidad','imagen')->get();
-        $descarga = Content::seccionTipo('calidad','descarga')->get();
+        $imagen = Content::seccionTipo('calidad','imagen')->orderBy('order')->get();
+        $descarga = Content::seccionTipo('calidad','descarga')->orderBy('order')->get();
         $calidad = Content::seccionTipo('calidad','texto')->first();
         $data = json_decode($calidad->text);
         return view('page.calidad',compact('imagen','descarga','data','calidad'));
@@ -78,6 +78,14 @@ class FrontendController extends Controller
         $categorias = Category::orderBy('order')->get();
         $novedades = News::orderBy('order')->get();
         return view('page.novedades.solidaria',compact('novedades','categorias'));
+    }
+
+    public function show_solidaria($id) {
+        $categoria = Category::find($id);
+//        dd($categoria->news);
+        $categorias = Category::orderBy('order')->get();
+        $novedades = $categoria->news()->orderBy('order')->paginate(8);
+        return view('page.novedades.show_solidaria', compact('novedades', 'categoria', 'categorias'));
     }
 
     public function solidaria_blog(News $news)

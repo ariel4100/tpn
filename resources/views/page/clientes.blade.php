@@ -1,14 +1,14 @@
 @extends('page.layouts.app')
 
 @section('content')
-    <div class="container my-5">
+    <div class="container mt-5">
         <div class="row">
-            <div class="col-md-12 wow fadeInDown" style="font-family: 'Montserrat Light'">
+            <div class="col-md-12 wow fadeInDown" style="/*font-family: 'Montserrat Light'*/">
                 {!! $cliente->text !!}
             </div>
         </div>
     </div>
-<div class="container">
+<div class="container mt-4 mb-5">
     <div class="row">
         @forelse($clientes as $key=>$c)
         <div class="col-md-3 wow fadeInDown" data-wow-delay="0.{{$key*3}}s" style="padding: unset;">

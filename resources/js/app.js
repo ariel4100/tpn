@@ -23,6 +23,7 @@ window.axios = require('axios');
 //ADMIN
 Vue.component('slider', require('./components/ExampleComponent.vue').default);
 Vue.component('home', require('./components/HomeComponent.vue').default);
+Vue.component('presupuesto', require('./components/PresupuestoComponent.vue').default);
 
 
 

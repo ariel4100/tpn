@@ -22,7 +22,7 @@ class ContentController extends Controller
             return view('adm.content.index', compact('contenido', 'section','type'));
         }
         if ($type == 'imagen' || $type == 'descarga' ) {
-            $contenido = Content::seccionTipo($section, $type)->get();
+            $contenido = Content::seccionTipo($section, $type)->orderBy('order')->get();
             return view('adm.content.lista', compact('contenido', 'section','type'));
         }
     }

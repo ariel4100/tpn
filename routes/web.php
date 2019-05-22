@@ -22,6 +22,7 @@ Route::get('flota','FrontendController@flota')->name('flota');
 Route::get('clientes','FrontendController@clientes')->name('clientes');
 Route::get('politica-de-calidad','FrontendController@calidad')->name('calidad');
 Route::get('solidaria','FrontendController@solidaria')->name('solidaria');
+Route::get('solidaria/{id}/solidaria', 'FrontendController@show_solidaria')->name('show_solidaria');
 Route::get('solidaria/{news}','FrontendController@solidaria_blog')->name('solidaria_blog');
 Route::get('contacto','FrontendController@contacto')->name('contacto');
 Route::get('pedido','FrontendController@pedido')->name('pedido');

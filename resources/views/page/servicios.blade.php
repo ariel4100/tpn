@@ -1,9 +1,9 @@
 @extends('page.layouts.app')
 @section('style')
     <style>
-        p{
-            font-family: 'Montserrat Light'
-        }
+        /*p{*/
+            /*font-family: 'Montserrat Light'*/
+        /*}*/
     </style>
 @stop
 @section('content')

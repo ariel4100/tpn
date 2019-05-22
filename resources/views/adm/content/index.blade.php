@@ -194,6 +194,20 @@
                     </div>
                 </div>
             @endif
+            @if($section == 'redes')
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <input type="text" id="facebook" name="facebook" placeholder="Facebook URL" class="form-control" value="{!! isset($data) ? $data['facebook'] : null !!}">
+                        <label for="facebook">Facebook</label>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="md-form">
+                        <input type="text" id="youtube" name="youtube" placeholder="Youtube URL" class="form-control" value="{!! isset($data) ? $data['youtube'] : null !!}">
+                        <label for="youtube">Youtube</label>
+                    </div>
+                </div>
+            @endif
             <div class="col-md-12 my-4 text-right">
                 <button type="submit" class="btn btn-success">Guardar</button>
             </div>

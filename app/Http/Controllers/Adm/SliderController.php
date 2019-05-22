@@ -11,7 +11,7 @@ class SliderController extends Controller
 {
     public function list($section)
     {
-        $slider = Slider::where('section', $section)->orderBy('order', 'ASC')->paginate(20);
+        $slider = Slider::where('section', $section)->orderBy('order')->paginate(20);
         return view('adm.slider.index',compact('section','slider'));
     }
     public function create($section)

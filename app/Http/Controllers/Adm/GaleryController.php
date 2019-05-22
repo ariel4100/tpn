@@ -13,7 +13,7 @@ class GaleryController extends Controller
     public function index($id)
     {
         $news = News::find($id);
-        $galery = Galery::all();
+        $galery = Galery::orderBy('orden')->get();
         return view('adm.news.galery.index',compact('galery','news'));
     }
 

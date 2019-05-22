@@ -17,7 +17,7 @@
                     <tbody>
                     @forelse ($galery as $item)
                         <tr>
-                            <td><img src="{{  $item->image }}" style="width: 150px"></td>
+                            <td><img src="{{  asset($item->image) }}" style="width: 150px"></td>
                             <td>{{ $item->orden }}</td>
                             <td>
                                 <a class="btn btn-sm btn-warning" href="{{ route('galeria.edit', $item->id) }}"><i class="fas fa-pen"></i></a>

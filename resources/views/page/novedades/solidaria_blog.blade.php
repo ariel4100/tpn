@@ -24,17 +24,17 @@
                 <div class="carousel-inner" role="listbox">
                     @if($news->image)
                         <div class="carousel-item  active">
-                            <img class="d-block w-100" src="{!! $news->image !!}"
+                            <img class="d-block w-100" src="{!! asset($news->image) !!}"
                                  alt="First slide">
                         </div>
                     @endif
                     @forelse($galery as $k=>$item)
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="{!! $item->image !!}"
+                        <img class="d-block w-100" src="{!! asset($item->image) !!}"
                              alt="First slide">
                     </div>
                     @empty
-                        <img src="{!! $news->image !!}" alt="" class="img-fluid">
+                        <img src="{!! asset($news->image) !!}" alt="" class="img-fluid">
                     @endforelse
                 </div>
                 <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
@@ -48,7 +48,7 @@
             </div>
             <!--/.Carousel Wrapper-->
             <h4 class="tpn-blue font-weight-bold my-4">{!! $news->title !!}</h4>
-            <div style="font-family: Montserrat Light;">
+            <div style="/*font-family: Montserrat Light;*/">
                 {!! $news->text !!}
             </div>
             <div class="card z-depth-0 rounded-0 p-5 my-5" style="background-color: #F9F9F9">
@@ -64,9 +64,10 @@
             </div>
         </div>
         <div class="col-md-3">
-            <h4 class="mb-4 tpn-red">Categorias</h4>
+            <h4 class="  tpn-red">Categorias</h4>
+            <hr class="" style="color: #595959">
             @forelse($categorias as $c)
-            <p class="m-0"><a href="" class="" style="color: #000;">>> {!! $c->title !!}</a></p>
+            <p class="m-0"><a href="{{ route('show_solidaria',$c->id) }}" class="" style="color: #000;">>> {!! $c->title !!}</a></p>
             @empty
             <p>No hay registros</p>
             @endforelse

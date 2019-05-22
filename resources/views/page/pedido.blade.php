@@ -185,9 +185,8 @@
                 <div class="col-md-6">
                     <select class="custom-select md-form" name="carga">
                         <option selected>Tipo de Carga</option>
-                        <option value="1">One</option>
-                        <option value="2">Two</option>
-                        <option value="3">Three</option>
+                        <option value="1">General</option>
+                        <option value="2">Peligrosa</option>
                     </select>
                 </div>
                 <div class="col-md-6">

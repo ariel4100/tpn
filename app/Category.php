@@ -10,6 +10,6 @@ class Category extends Model
         'title','order',
     ];
     public function news(){
-        return $this->hasMany('App\News');
+        return $this->hasMany('App\News','categories_id');
     }
 }

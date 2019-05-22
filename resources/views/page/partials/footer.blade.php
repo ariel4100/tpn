@@ -1,3 +1,5 @@
+@php($redes = \App\Content::seccionTipo('redes','texto')->first())
+@php($social = json_decode($redes->text))
 <!-- Footer -->
 <footer class="page-footer font-small" style="background-color: #303030">
     <div class="container  text-md-left pt-5">
@@ -8,8 +10,8 @@
                 <img src="{!! $data->image_3 !!}" alt="" class="img-fluid">
                 <div class="d-flex my-5">
                     <p style="font-size: 13px">SEGUINOS EN</p>
-                    <a href="" class="tpn-blue mx-2"><i class="fab fa-facebook fa-lg"></i></a>
-                    <a href="" class="tpn-blue"><i class="fab fa-youtube fa-lg"></i></a>
+                    <a href="{!! $social->facebook !!}" target="_blank" class="tpn-blue mx-2"><i class="fab fa-facebook fa-lg"></i></a>
+                    <a href="{!! $social->youtube !!}" target="_blank" class="tpn-blue"><i class="fab fa-youtube fa-lg"></i></a>
                 </div>
             </div>
             <div class="col-sm-12 col-md-6 col-lg-3 col-xl-3 mx-auto mb-4">

@@ -1,11 +1,13 @@
 <!doctype html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
+@php($logos = \App\Content::seccionTipo('logos','texto')->first())
+@php($data = json_decode($logos->text))
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Hello, world!</title>
-
+    <title>Transporte Puerto Nuevo</title>
+    <link rel="icon" type="image/png" href="{{ asset($data->image_2) }}" sizes="64x64">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
     <!-- Bootstrap core CSS -->
@@ -38,11 +40,17 @@
         .navbar.navbar-light .breadcrumb .nav-item .nav-link, .navbar.navbar-light .navbar-nav .nav-item .nav-link {
             color: #595959;
         }
+        .btn{
+            box-shadow: unset !important;
+        }
+        .card{
+            box-shadow: unset !important;
+        }
     </style>
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     @yield('style')
 </head>
-<body style="font-family: 'Montserrat regular'; color: #595959;">
+<body style="font-family: 'Montserrat'; color: #595959;">
 <div id="app">
     @include('page.partials.header')
     <main class=" ">
@@ -60,6 +68,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.7.6/js/mdb.min.js"></script>
+
+<script src="{{ asset('js/app.js') }}"></script>
 <script>
     new WOW().init();
 </script>

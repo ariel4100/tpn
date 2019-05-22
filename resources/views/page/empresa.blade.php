@@ -5,7 +5,7 @@
 <div class="container my-5">
     <h4 class="tpn-blue font-weight-bold mb-5 wow fadeInDown">{!! $empresa->title !!}</h4>
     <div class="row">
-        <div class="col-md-8 wow fadeInLeft" style="font-family: 'Montserrat Light'">
+        <div class="col-md-8 wow fadeInLeft" style="/*font-family: 'Montserrat Light'*/">
             {!! $empresa->text !!}
         </div>
         <div class="col-md-4 wow fadeInRight">
