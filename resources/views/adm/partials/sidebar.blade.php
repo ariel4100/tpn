@@ -128,14 +128,14 @@
             </ul>
         </li>
         <!---PEDIDO DE RETIRO---->
-        <li class="">
-            <a href="#pedido" data-toggle="collapse" aria-expanded="false" class="d-flex">
-                <i class="material-icons">archive</i>Pedido de Retiro<i class="fas fa-sort-down ml-auto"></i>
-            </a>
-            <ul class="collapse list-group list-group-flush " id="pedido">
-                <li><a href="{{ route('pedidos.index') }}"><i class="fas fa-chevron-right px-4"></i>Ver Pedidos</a></li>
-            </ul>
-        </li>
+        {{--<li class="">--}}
+            {{--<a href="#pedido" data-toggle="collapse" aria-expanded="false" class="d-flex">--}}
+                {{--<i class="material-icons">archive</i>Pedido de Retiro<i class="fas fa-sort-down ml-auto"></i>--}}
+            {{--</a>--}}
+            {{--<ul class="collapse list-group list-group-flush " id="pedido">--}}
+                {{--<li><a href="{{ route('pedidos.index') }}"><i class="fas fa-chevron-right px-4"></i>Ver Pedidos</a></li>--}}
+            {{--</ul>--}}
+        {{--</li>--}}
         <hr>
         <!---TPN---->
         <li class="">

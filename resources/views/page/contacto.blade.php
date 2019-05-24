@@ -14,6 +14,11 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-9">
+            @if (session('status'))
+                <div class="alert alert-success my-4" role="alert">
+                    {!! session('status') !!}
+                </div>
+            @endif
             <div class="row">
                 <div class="col-md-6">
                     <p class="tpn-blue pl-4">{!! $data->title !!}</p>
@@ -58,21 +63,22 @@
                     </ul>
                 </div>
             </div>
-            <form class="form-row my-5">
+            <form class="form-row my-5" action="{{ route('contacto.mail') }}" method="post" enctype="multipart/form-data">
+                @csrf
                 <div class="md-form col-md-6">
-                    <input type="text" class="form-control" placeholder="Nombre">
+                    <input type="text" class="form-control" name="nombre" placeholder="Nombre">
                 </div>
                 <div class="md-form col-md-6">
-                    <input type="text" class="form-control" placeholder="Apellido">
+                    <input type="text" class="form-control" name="apellido" placeholder="Apellido">
                 </div>
                 <div class="md-form col-md-6">
-                    <input type="email" class="form-control" placeholder="Email">
+                    <input type="email" class="form-control" name="email" placeholder="Email">
                 </div>
                 <div class="md-form col-md-6">
-                    <input type="text" class="form-control" placeholder="Telefono">
+                    <input type="text" class="form-control" name="telefono" placeholder="Telefono">
                 </div>
                 <div class="md-form col-md-12">
-                    <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
+                    <textarea id="form7" class="md-textarea form-control" name="mensaje" rows="3"></textarea>
                     <label for="form7">Mensaje</label>
                 </div>
                 <div class="col-md-6 d-flex justify-content-center">
@@ -80,7 +86,7 @@
                 </div>
                 <div class="col-md-6 ">
                     <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="defaultUnchecked">
+                        <input type="checkbox" class="custom-control-input" name="condiciones" id="defaultUnchecked">
                         <label class="custom-control-label" for="defaultUnchecked">Acepto los términos y condiciones de privacidad</label>
                     </div>
                 </div>

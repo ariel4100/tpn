@@ -28,6 +28,11 @@ Route::get('contacto','FrontendController@contacto')->name('contacto');
 Route::get('pedido','FrontendController@pedido')->name('pedido');
 Route::get('presupuesto','FrontendController@presupuesto')->name('presupuesto');
 Auth::routes();
+//MAIL
+Route::post('mail-pedido','MailController@pedido')->name('pedido.mail');
+Route::post('mail-contacto','MailController@contacto')->name('contacto.mail');
+Route::post('mail-presupuesto','MailController@presupuesto')->name('presupuesto.mail');
+
 /*Route::get('/download/{file}', function($file) {
     return response()->download($file);
 })->name('downloadFile');*/

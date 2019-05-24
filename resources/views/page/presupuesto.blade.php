@@ -35,19 +35,25 @@
     </div>
 </div>
     <div class="container">
-        <form class="form-row my-5 wow fadeIn">
+        @if (session('status'))
+            <div class="alert alert-success my-4" role="alert">
+                {!! session('status') !!}
+            </div>
+        @endif
+        <form class="form-row my-5 wow fadeIn" action="{{ route('presupuesto.mail') }}" method="post" enctype="multipart/form-data">
+            @csrf
           <div class="row" id="primero">
               <div class="md-form col-md-6">
-                  <input type="text" class="form-control" placeholder="Nombre">
+                  <input type="text" class="form-control" name="nombre" placeholder="Nombre">
               </div>
               <div class="md-form col-md-6">
-                  <input type="text" class="form-control" placeholder="Localidad">
+                  <input type="text" class="form-control" name="localidad" placeholder="Localidad">
               </div>
               <div class="md-form col-md-6">
-                  <input type="email" class="form-control" placeholder="Email">
+                  <input type="email" class="form-control" name="email" placeholder="Email">
               </div>
               <div class="md-form col-md-6">
-                  <input type="text" class="form-control" placeholder="Telefono">
+                  <input type="text" class="form-control" name="telefono" placeholder="Telefono">
               </div>
               <div class="col-md-12 text-right">
                   <button onclick="siguiente(this,1)" type="button" class="btn text-white my-4" style="background-color: #E0333C">siguiente</button>
@@ -66,18 +72,18 @@
                 <presupuesto></presupuesto>
                 <div class="md-form col-md-6">
                     <div class="custom-file">
-                        <input type="file" class="custom-file-input" id="customFileLangHTML">
+                        <input type="file" class="custom-file-input" name="file" id="customFileLangHTML">
                         <label class="custom-file-label" for="customFileLangHTML" data-browse="...">Examinar Adjunto</label>
                     </div>
                 </div>
                 <div class="md-form col-md-6">
-                    <input type="text" class="form-control" placeholder="Origen">
+                    <input type="text" class="form-control" name="origen" placeholder="Origen">
                 </div>
                 <div class="md-form col-md-6">
-                    <input type="text" class="form-control" placeholder="Destino">
+                    <input type="text" class="form-control" name="destino" placeholder="Destino">
                 </div>
                 <div class="md-form col-md-6">
-                    <select name="" id="" class="custom-select md-form">
+                    <select name="servicio" id="" class="custom-select md-form">
                         <option value="" disabled selected>Tipo de Servicio</option>
                         <option value="">Carga General</option>
                         <option value="">Carga Especial</option>
@@ -86,7 +92,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="md-form">
-                        <textarea id="form7" class="md-textarea form-control" rows="3"></textarea>
+                        <textarea id="form7" class="md-textarea form-control" name="mensaje" rows="3"></textarea>
                         <label for="form7">Información adicional...</label>
                     </div>
                 </div>
